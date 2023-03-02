@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1089574689973",
+    "project_id": "noadsradio",
+    "storage_bucket": "noadsradio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089574689973:android:52067bd9bc311da8e532fc",
+        "android_client_info": {
+          "package_name": "me.kdv.noadsradio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1089574689973-kovc2kjobgjd5tfhpbbd5mi8a8sdvkso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4v7ow6_owEPOvaFoN_zq9tksMFa79gGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1089574689973-kovc2kjobgjd5tfhpbbd5mi8a8sdvkso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
