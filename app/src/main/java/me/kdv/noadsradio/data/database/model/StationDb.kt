@@ -10,5 +10,6 @@ data class StationDb(
     val stationId: Int,
     val groupId: Int,
     val name: String,
-    val url: String
+    val url: String,
+    val noJingle: Boolean
 )

@@ -11,7 +11,8 @@ class StationMapper @Inject constructor() {
             stationId = dto.id,
             groupId = dto.groupId,
             name = dto.name ?: noData,
-            url = dto.url ?: ""
+            url = dto.url ?: "",
+            noJingle = dto.noJingle
         )
     }
 

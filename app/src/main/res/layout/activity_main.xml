@@ -6,49 +6,39 @@
     android:layout_height="match_parent"
     tools:context="me.kdv.noadsradio.presentation.MainActivity">
 
-    <androidx.media3.ui.PlayerView
-        android:id="@+id/playerView"
-        android:layout_width="0dp"
-        android:layout_height="500dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/stationAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btGetInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="159dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerView" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/stationTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabGravity="start"
+            app:tabMaxWidth="0dp"
+            app:tabMode="auto" />
 
-    <Button
-        android:id="@+id/btStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="224dp"
-        android:text="Button"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/stationViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btGetInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/stationAppBarLayout">
 
-    <Button
-        android:id="@+id/btNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="58dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btStop"
-        app:layout_constraintTop_toBottomOf="@+id/playerView" />
+    </androidx.viewpager.widget.ViewPager>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
