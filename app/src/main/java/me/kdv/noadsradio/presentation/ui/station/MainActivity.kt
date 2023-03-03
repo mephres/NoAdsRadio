@@ -1,18 +1,25 @@
-package me.kdv.noadsradio.presentation
+package me.kdv.noadsradio.presentation.ui.station
 
 import android.content.ComponentName
+import android.content.Context
+import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.google.common.util.concurrent.MoreExecutors
 import dagger.hilt.android.AndroidEntryPoint
+import me.kdv.noadsradio.R
 import me.kdv.noadsradio.databinding.ActivityMainBinding
+import me.kdv.noadsradio.presentation.MusicPlayerService
 
 
 @UnstableApi
@@ -41,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        loadStationGroups()
         /*ContextCompat.startForegroundService(
             this,
             PlayerService.newService(this)
@@ -69,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         }, MoreExecutors.directExecutor())
 
 
-        binding.btGetInfo.setOnClickListener({
+        /*binding.btGetInfo.setOnClickListener({
             getMediaItem()
         })
 
@@ -83,9 +91,47 @@ class MainActivity : AppCompatActivity() {
             val uri = Uri.parse("https://jfm1.hostingradio.ru:14536/rcstream.mp3")
 
             loadMediaItem(uri)
-        }
+        }*/
 
         viewModel.getInfo()
+    }
+
+    private fun loadStationGroups() {
+        viewModel.stationGroups.observe(this, {stationGroupList->
+            stationGroupList.forEach {
+                addChip(this, binding.chipGroup, it.description, it.id)
+            }
+        })
+    }
+
+    private fun addChip(
+        context: Context,
+        chipGroup: ChipGroup,
+        chipText: String,
+        chipTag: Int
+    ): Chip {
+        val chip = Chip(context)
+        chip.isCheckable = false
+        chip.text = chipText
+        chip.tag = chipTag
+        chip.chipBackgroundColor =
+            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.colorPrimary))
+        chip.setTextColor(ContextCompat.getColor(context, R.color.md_white))
+        chip.checkedIconTint =
+            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.md_white))
+        chip.isChecked = false
+        chip.chipCornerRadius = 4F
+        chip.isClickable = true
+        chip.chipStrokeWidth = 2F
+        chip.chipStrokeColor = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.md_black))
+        chipGroup.addView(chip)
+
+        chip.setOnClickListener {
+            val a = it.tag as Int
+            val b= 1
+        }
+
+        return chip
     }
 
     fun getMediaItem() {

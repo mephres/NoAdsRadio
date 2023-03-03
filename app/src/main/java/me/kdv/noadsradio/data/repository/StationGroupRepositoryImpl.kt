@@ -1,9 +1,12 @@
 package me.kdv.noadsradio.data.repository
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Transformations
 import kotlinx.coroutines.*
 import me.kdv.noadsradio.data.database.dao.StationGroupDao
 import me.kdv.noadsradio.data.database.mapper.StationGroupMapper
 import me.kdv.noadsradio.data.network.FBDataBase
+import me.kdv.noadsradio.domain.model.StationGroup
 import me.kdv.noadsradio.domain.repository.StationGroupRepository
 import me.kdv.noadsradio.domain.repository.StationRepository
 import javax.inject.Inject
@@ -39,5 +42,13 @@ class StationGroupRepositoryImpl @Inject constructor(
         }, { error ->
 
         })
+    }
+
+    override fun getStationGroups(): LiveData<List<StationGroup>> {
+        return Transformations.map(stationGroupDao.getGroups()) {
+            it.map {
+                stationGroupMapper.mapDbToEntity(it)
+            }
+        }
     }
 }
