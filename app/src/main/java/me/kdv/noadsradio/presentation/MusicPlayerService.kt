@@ -1,4 +1,4 @@
-package me.kdv.noadsradio
+package me.kdv.noadsradio.presentation
 
 import android.net.Uri
 import androidx.media3.common.MediaItem

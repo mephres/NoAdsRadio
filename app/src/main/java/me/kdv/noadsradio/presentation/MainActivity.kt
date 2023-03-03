@@ -1,8 +1,9 @@
-package me.kdv.noadsradio
+package me.kdv.noadsradio.presentation
 
 import android.content.ComponentName
 import android.net.Uri
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
@@ -10,15 +11,19 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.MoreExecutors
+import dagger.hilt.android.AndroidEntryPoint
 import me.kdv.noadsradio.databinding.ActivityMainBinding
 
 
 @UnstableApi
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityMainBinding.inflate(layoutInflater)
     }
+
+    private val viewModel by viewModels<MainViewModel>()
 
     private var playWhenReady = true
     private var currentItem = 0
@@ -31,11 +36,6 @@ class MainActivity : AppCompatActivity() {
        which is created from the media controller */
     lateinit var player: Player
 
-    var page = 0
-
-    // url of video which we are loading.
-    var videoURL =
-        "https://media.geeksforgeeks.org/wp-content/uploads/20201217163353/Screenrecorder-2020-12-17-16-32-03-350.mp4"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,8 +66,6 @@ class MainActivity : AppCompatActivity() {
 
             loadMediaItem(uri)
 
-
-
         }, MoreExecutors.directExecutor())
 
 
@@ -81,11 +79,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btNext.setOnClickListener {
-            val uri = Uri.parse("https://radio.sweetmelodies.tk:8000/stream1")
+            //val uri = Uri.parse("https://radio.sweetmelodies.tk:8000/stream1")
+            val uri = Uri.parse("https://jfm1.hostingradio.ru:14536/rcstream.mp3")
 
             loadMediaItem(uri)
         }
 
+        viewModel.getInfo()
     }
 
     fun getMediaItem() {
