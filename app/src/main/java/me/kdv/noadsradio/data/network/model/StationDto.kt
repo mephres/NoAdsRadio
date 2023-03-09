@@ -9,5 +9,6 @@ data class StationDto(
     val url: String? = null,
     @get:PropertyName("no_jingle")
     @set:PropertyName("no_jingle")
-    var noJingle: Boolean = false
+    var noJingle: Boolean = false,
+    val image: String? = null
 )

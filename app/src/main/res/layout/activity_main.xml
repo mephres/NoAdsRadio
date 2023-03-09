@@ -22,14 +22,13 @@
     </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/eventRecyclerView"
+        android:id="@+id/stationRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
         tools:listitem="@layout/station_item">
-
     </androidx.recyclerview.widget.RecyclerView>
 
     <View

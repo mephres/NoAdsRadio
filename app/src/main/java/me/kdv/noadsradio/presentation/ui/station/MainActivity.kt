@@ -5,10 +5,12 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.media3.common.MediaItem
+import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
@@ -16,9 +18,12 @@ import androidx.media3.session.SessionToken
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.common.util.concurrent.MoreExecutors
+import com.intas.metrolog.presentation.ui.events.adapter.StationListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import me.kdv.noadsradio.R
 import me.kdv.noadsradio.databinding.ActivityMainBinding
+import me.kdv.noadsradio.domain.model.Station
+import me.kdv.noadsradio.domain.model.StationState
 import me.kdv.noadsradio.presentation.MusicPlayerService
 
 
@@ -29,11 +34,13 @@ class MainActivity : AppCompatActivity() {
     private val binding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityMainBinding.inflate(layoutInflater)
     }
-
+    private var stationListAdapter: StationListAdapter? = null
+    private var currentStationList: MutableList<Station>? = null
     private val viewModel by viewModels<MainViewModel>()
 
     private var playWhenReady = true
-    private var currentItem = 0
+    private var currentStation: Station? = null
+    private var prevStation: Station? = null
     private var playbackPosition = 0L
 
     /* This is the global variable of the player
@@ -41,25 +48,16 @@ class MainActivity : AppCompatActivity() {
        you're going to use to control playback,
        you're not gonna need anything else other than this,
        which is created from the media controller */
-    lateinit var player: Player
+    private var player: Player? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        setupRecyclerView()
         loadStationGroups()
-        /*ContextCompat.startForegroundService(
-            this,
-            PlayerService.newService(this)
-        )*/
-
-        /*val workManager = WorkManager.getInstance(applicationContext)
-        workManager.enqueueUniqueWork(
-            WORK_NAME,
-            ExistingWorkPolicy.APPEND_OR_REPLACE,
-            MyWorker.makeRequest(page++)
-        )*/
+        loadStations()
 
         /* Creating session token (links our UI with service and starts it) */
         val sessionToken =
@@ -97,11 +95,90 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadStationGroups() {
-        viewModel.stationGroups.observe(this, {stationGroupList->
+        viewModel.stationGroups.observe(this, { stationGroupList ->
             stationGroupList.forEach {
                 addChip(this, binding.chipGroup, it.description, it.id)
             }
         })
+    }
+
+    private fun loadStations() {
+        viewModel.stations.observe(this, {
+            stationListAdapter?.submitList(it)
+            currentStationList = it.toMutableList()
+        })
+    }
+
+    fun setupRecyclerView() {
+
+        val stationRecyclerView = binding.stationRecyclerView
+        stationListAdapter = StationListAdapter()
+        stationRecyclerView?.let {
+            with(it) {
+                adapter = stationListAdapter
+                itemAnimator = null
+                recycledViewPool.setMaxRecycledViews(0, StationListAdapter.MAX_POOL_SIZE)
+            }
+        }
+
+        setupClickListener()
+        //onScrollListener()
+    }
+
+    private fun setupClickListener() {
+
+        stationListAdapter?.onStationClickListener = { station, position ->
+
+            station.position = position
+            prevStation = currentStation
+
+            when(station.state) {
+                StationState.PLAYING -> {
+                    setStationState(currentStation,StationState.STOPPED)
+                    //station.state = StationState.STOPPED
+
+                    currentStation = null
+                    stopPlaying()
+                }
+                StationState.LOADED -> {
+                }
+                StationState.STOPPED -> {
+                    //station.state = StationState.PLAYING
+                    setStationState(currentStation,StationState.PLAYING)
+                    setStationState(prevStation,StationState.STOPPED)
+
+                    //stopPrevStation()
+                    currentStation = station
+                    loadMediaItem(Uri.parse(station.url))
+                }
+            }
+            /*
+            if (station.state.equals(StationState.STOPPED)) {
+                station.state = StationState.PLAYING
+
+                stopPrevStation()
+                currentStation = station
+                loadMediaItem(Uri.parse(station.url))
+            } else if (station.state.equals(StationState.PLAYING)) {
+                station.state = StationState.STOPPED
+
+                currentStation = null
+                stopPlaying()
+            }*/
+
+            /*currentStationList?.set(position, station)
+            stationListAdapter?.submitList(currentStationList)
+            stationListAdapter?.notifyItemChanged(position)*/
+        }
+    }
+
+    private fun stopPrevStation() {
+        prevStation?.let {
+            it.state = StationState.STOPPED
+            currentStationList?.set(it.position, it)
+            stationListAdapter?.notifyItemChanged(it.position)
+        }
+
     }
 
     private fun addChip(
@@ -123,12 +200,13 @@ class MainActivity : AppCompatActivity() {
         chip.chipCornerRadius = 4F
         chip.isClickable = true
         chip.chipStrokeWidth = 2F
-        chip.chipStrokeColor = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.md_black))
+        chip.chipStrokeColor =
+            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.md_black))
         chipGroup.addView(chip)
 
         chip.setOnClickListener {
             val a = it.tag as Int
-            val b= 1
+            val b = 1
         }
 
         return chip
@@ -150,7 +228,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
     }
 
     fun loadMediaItem(uri: Uri) {
@@ -165,74 +242,88 @@ class MainActivity : AppCompatActivity() {
             player.setMediaItem(newItem)
             player.prepare()
             player.play()
+
+            player.addListener(object : Player.Listener {
+                override fun onMediaMetadataChanged(mediaMetadata: MediaMetadata) {
+                    super.onMediaMetadataChanged(mediaMetadata)
+                    Log.d("NoAdsPlayer", "mediaMetadata.title: ${mediaMetadata.title}")
+                    Log.d("NoAdsPlayer", "mediaMetadata.artist: ${mediaMetadata.artist}")
+                    Log.d("NoAdsPlayer", "mediaMetadata.albumArtist: ${mediaMetadata.albumArtist}")
+                    Log.d("NoAdsPlayer", "mediaMetadata.albumTitle: ${mediaMetadata.albumTitle}")
+                    Log.d("NoAdsPlayer", "mediaMetadata.genre: ${mediaMetadata.genre}")
+                    Log.d("NoAdsPlayer", "mediaMetadata.station: ${mediaMetadata.station}")
+                    Log.d("NoAdsPlayer", "mediaMetadata.subtitle: ${mediaMetadata.subtitle}")
+                }
+
+                override fun onPlaylistMetadataChanged(mediaMetadata: MediaMetadata) {
+                    super.onPlaylistMetadataChanged(mediaMetadata)
+                    val a = 1
+                }
+
+                override fun onPlaybackStateChanged(playbackState: Int) {
+                    super.onPlaybackStateChanged(playbackState)
+                    when (playbackState) { // check player play back state
+                        Player.STATE_READY -> {
+                            //changeStationState(StationState.PLAYING)
+                            Log.d("NoAdsPlayerPlaybackState", "STATE_READY")
+                            //hideProgressBar()
+                            setStationState(currentStation,StationState.PLAYING)
+                        }
+                        Player.STATE_ENDED -> {
+                            //your logic
+                            Log.d("NoAdsPlayerPlaybackState", "STATE_ENDED")
+                        }
+                        Player.STATE_BUFFERING -> {
+                            Log.d("NoAdsPlayerPlaybackState", "STATE_BUFFERING")
+                            //showProgressBar()
+                            setStationState(currentStation,StationState.LOADED)
+                        }
+                        Player.STATE_IDLE -> {
+                            Log.d("NoAdsPlayerPlaybackState", "STATE_IDLE")
+                            //hideProgressBar()
+                            stopPlaying()
+                            setStationState(currentStation,StationState.STOPPED)
+
+                            //setStationState(StationState.STOPPED)
+                        }
+                        else -> {
+                            //playerView.hideController()
+                        }
+                    }
+                }
+            })
         }
-
     }
 
-    /*override fun onStart() {
-        super.onStart()
-        //initializePlayer()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        /*hideSystemUi()
-        if ((Util.SDK_INT <= 23 || player == null)) {
-            initializePlayer()
-        }*/
-    }
-
-    public override fun onPause() {
-        super.onPause()
-        /*if (Util.SDK_INT <= 23) {
-            releasePlayer()
-        }*/
-    }
-
-
-    public override fun onStop() {
-        super.onStop()
-        /*if (Util.SDK_INT > 23) {
-            releasePlayer()
-        }*/
-    }
-
-    @SuppressLint("InlinedApi")
-    private fun hideSystemUi() {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        WindowInsetsControllerCompat(window, binding.playerView).let { controller ->
-            controller.hide(WindowInsetsCompat.Type.systemBars())
-            controller.systemBarsBehavior =
-                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
-    }
-
-    private fun initializePlayer() {
-        player = ExoPlayer.Builder(this) // <- context
-            .build()
-            .also {
-                binding.playerView.player = it
-            }
-
-        // create a media item.
-        //val uri = Uri.parse("https://storage.googleapis.com/exoplayer-test-media-0/play.mp3")
-        //val uri = Uri.parse("https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4")
-        val uri = Uri.parse("https://listen2.myradio24.com/8226")
-        val mediaItem = MediaItem.fromUri(uri)
-        player?.setMediaItem(mediaItem)
-
-        player?.playWhenReady = playWhenReady
-        player?.seekTo(currentItem, playbackPosition)
-        player?.prepare()
-    }
-
-    private fun releasePlayer() {
+    private fun stopPlaying() {
         player?.let { exoPlayer ->
-            playbackPosition = exoPlayer.currentPosition
-            currentItem = exoPlayer.currentMediaItemIndex
-            playWhenReady = exoPlayer.playWhenReady
-            exoPlayer.release()
+            exoPlayer.playWhenReady = false
+            exoPlayer.stop()
         }
-        player = null
-    }*/
+    }
+
+    private fun showProgressBar() {
+        currentStation?.let {
+            it.state = StationState.LOADED
+            currentStationList?.set(it.position, it)
+            stationListAdapter?.submitList(currentStationList)
+            stationListAdapter?.notifyItemChanged(it.position)
+        }
+
+    }
+
+    private fun hideProgressBar() {
+        currentStation?.let {
+            it.state = StationState.PLAYING
+            currentStationList?.set(it.position, it)
+            stationListAdapter?.submitList(currentStationList)
+            stationListAdapter?.notifyItemChanged(it.position)
+        }
+    }
+
+    private fun setStationState(station: Station?, state: StationState) {
+        station?.let {
+            viewModel.changeStationState(it,state)
+        }
+    }
 }

@@ -1,6 +1,5 @@
 package me.kdv.noadsradio.presentation
 
-import android.net.Uri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
@@ -50,9 +49,5 @@ class MusicPlayerService: MediaLibraryService() {
 
     override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? {
         return session
-    }
-
-    fun loadMediaItem(uri: Uri) {
-
     }
 }
