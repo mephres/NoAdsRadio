@@ -3,6 +3,7 @@ package me.kdv.noadsradio.data.database.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import me.kdv.noadsradio.data.database.model.StationDb
+import me.kdv.noadsradio.domain.model.StationState
 
 @Dao
 interface StationDao {
@@ -17,4 +18,7 @@ interface StationDao {
 
     @Update
     suspend fun updateStation(station: StationDb)
+
+    @Query("UPDATE station SET state = :state")
+    suspend fun resetAllStations(state: Int = StationState.STOPPED.ordinal)
 }

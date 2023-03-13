@@ -17,7 +17,7 @@ class MainViewModel @Inject constructor(
     private val stationRepository: StationRepository,
 ) : ViewModel() {
 
-    val stationGroups = stationGroupRepository.getStationGroups().distinctUntilChanged()
+    val stationGroups = stationGroupRepository.getStationGroups()
     val stations = stationRepository.getStations().distinctUntilChanged()
 
     fun getInfo() {
@@ -30,6 +30,28 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             station.state = state
             stationRepository.updateStation(station)
+        }
+    }
+
+    fun setIsCurrent(stationGroup: Int) {
+
+        viewModelScope.launch {
+            stationGroups.value?.forEach {
+                if (stationGroup == it.id) {
+                    it.isCurrent = true
+                } else {
+                    it.isCurrent = false
+                }
+            }
+            stationGroups.value?.let {
+                stationGroupRepository.updateStationGroups(it)
+            }
+        }
+    }
+
+    fun resetAllStations() {
+        viewModelScope.launch {
+            stationRepository.resetAllStations()
         }
     }
 }

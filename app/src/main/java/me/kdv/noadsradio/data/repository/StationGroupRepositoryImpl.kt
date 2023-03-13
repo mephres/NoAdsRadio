@@ -33,6 +33,7 @@ class StationGroupRepositoryImpl @Inject constructor(
                     stationGroupDto.stations?.let { stations ->
                         val stationsDbList = stations.map {
                             it.groupId = stationGroupDto.id
+                            it.groupName = stationGroupDto.description
                             it
                         }
                         stationRepository.insertStationList(stationsDbList)
@@ -50,5 +51,12 @@ class StationGroupRepositoryImpl @Inject constructor(
                 stationGroupMapper.mapDbToEntity(it)
             }
         }
+    }
+
+    override suspend fun updateStationGroups(stationGroups: List<StationGroup>) {
+        val db = stationGroups.map {
+            stationGroupMapper.mapEntityToDb(it)
+        }
+        stationGroupDao.updateGroups(db)
     }
 }

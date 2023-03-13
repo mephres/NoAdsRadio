@@ -43,8 +43,9 @@ class StationListAdapter : ListAdapter<Station, StationViewHolder>(StationDiffCa
         holder.progressBar.visibility = View.GONE
 
         holder.stationTitle.text = station.name
+        holder.stationStyle.text = station.groupName
 
-        when(station.state) {
+        when (station.state) {
             StationState.PLAYING -> {
                 Glide.with(context)
                     .load(ContextCompat.getDrawable(context, R.drawable.outline_stop_circle_48))
@@ -60,7 +61,12 @@ class StationListAdapter : ListAdapter<Station, StationViewHolder>(StationDiffCa
             }
             StationState.STOPPED -> {
                 Glide.with(context)
-                    .load(ContextCompat.getDrawable(context, R.drawable.baseline_play_circle_outline_48))
+                    .load(
+                        ContextCompat.getDrawable(
+                            context,
+                            R.drawable.baseline_play_circle_outline_48
+                        )
+                    )
                     .centerCrop()
                     .into(holder.stationControlImageView)
             }
@@ -74,6 +80,7 @@ class StationListAdapter : ListAdapter<Station, StationViewHolder>(StationDiffCa
                     .build()
             )
             Glide.with(context).load(url).centerCrop().into(holder.stationImageView)
+
             holder.stationSmallTitle.visibility = View.GONE
             holder.stationImageView.setBackgroundColor(
                 ContextCompat.getColor(
@@ -86,14 +93,13 @@ class StationListAdapter : ListAdapter<Station, StationViewHolder>(StationDiffCa
             holder.stationImageView.setBackgroundColor(
                 ContextCompat.getColor(
                     context,
-                    R.color.md_blue_500
+                    R.color.md_grey_400
                 )
             )
             holder.stationSmallTitle.visibility = View.VISIBLE
             holder.stationSmallTitle.text = station.smallTitle
         }
         holder.stationControlImageView.setOnClickListener {
-            //station.state = StationState.PLAYING
 
             Glide.with(context)
                 .load(ContextCompat.getDrawable(context, R.drawable.outline_circle_48))
@@ -103,10 +109,6 @@ class StationListAdapter : ListAdapter<Station, StationViewHolder>(StationDiffCa
             notifyItemChanged(position)
             onStationClickListener?.invoke(station, position)
         }
-    }
-
-    override fun onViewRecycled(holder: StationViewHolder) {
-        super.onViewRecycled(holder)
     }
 
     override fun getItemViewType(position: Int): Int {

@@ -9,4 +9,5 @@ interface StationRepository {
     suspend fun deleteStations()
     suspend fun updateStation(station: Station)
     fun getStations(): LiveData<List<Station>>
+    suspend fun resetAllStations()
 }

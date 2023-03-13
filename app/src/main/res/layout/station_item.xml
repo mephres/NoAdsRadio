@@ -54,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/media3_icon_circular_play" />
+            app:srcCompat="@drawable/baseline_play_circle_outline_48" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -62,6 +62,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:visibility="invisible"
+            android:indeterminateTint="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="@+id/stationControlImageView"
             app:layout_constraintEnd_toEndOf="@+id/stationControlImageView"
             app:layout_constraintStart_toStartOf="@+id/stationControlImageView"

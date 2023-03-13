@@ -6,4 +6,5 @@ import me.kdv.noadsradio.domain.model.StationGroup
 interface StationGroupRepository {
     suspend fun getStationInfo()
     fun getStationGroups(): LiveData<List<StationGroup>>
+    suspend fun updateStationGroups(stationGroups: List<StationGroup>)
 }

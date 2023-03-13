@@ -4,6 +4,7 @@ data class Station(
     val id: Int,
     val stationId: Int,
     val groupId: Int,
+    val groupName: String,
     val name: String,
     val url: String,
     val noJingle: Boolean,

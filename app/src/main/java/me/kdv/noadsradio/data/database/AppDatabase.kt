@@ -11,7 +11,7 @@ import me.kdv.noadsradio.data.database.model.StationGroupDb
 
 @Database(
     entities = [StationGroupDb::class, StationDb::class],
-    version = 1, exportSchema = false
+    version = 2, exportSchema = false
 )
 
 abstract class AppDatabase : RoomDatabase() {

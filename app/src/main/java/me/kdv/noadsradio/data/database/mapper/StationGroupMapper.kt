@@ -10,7 +10,8 @@ class StationGroupMapper @Inject constructor() {
         return StationGroupDb(
             id = dto.id,
             name = dto.name ?: noData,
-            description = dto.description ?: noData
+            description = dto.description ?: noData,
+            isCurrent = false
         )
     }
 
@@ -18,7 +19,17 @@ class StationGroupMapper @Inject constructor() {
         return StationGroup(
             id = db.id,
             name = db.name,
-            description = db.description
+            description = db.description,
+            isCurrent = db.isCurrent
+        )
+    }
+
+    fun mapEntityToDb(entity: StationGroup): StationGroupDb {
+        return StationGroupDb(
+            id = entity.id,
+            name = entity.name,
+            description = entity.description,
+            isCurrent = entity.isCurrent
         )
     }
 

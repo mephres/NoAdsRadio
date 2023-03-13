@@ -1,10 +1,7 @@
 package me.kdv.noadsradio.data.database.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import me.kdv.noadsradio.data.database.model.StationGroupDb
 
 @Dao
@@ -14,4 +11,8 @@ interface StationGroupDao {
 
     @Query("SELECT * FROM station_group")
     fun getGroups(): LiveData<List<StationGroupDb>>
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateGroups(groups: List<StationGroupDb>)
+
 }

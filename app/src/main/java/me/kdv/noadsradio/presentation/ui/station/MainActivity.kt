@@ -1,23 +1,23 @@
 package me.kdv.noadsradio.presentation.ui.station
 
 import android.content.ComponentName
-import android.content.Context
-import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
-import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.common.util.concurrent.MoreExecutors
+import com.intas.metrolog.presentation.ui.events.adapter.StationGroupListAdapter
 import com.intas.metrolog.presentation.ui.events.adapter.StationListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import me.kdv.noadsradio.R
@@ -35,7 +35,10 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
     private var stationListAdapter: StationListAdapter? = null
+    private var stationGroupListAdapter: StationGroupListAdapter? = null
+
     private var currentStationList: MutableList<Station>? = null
+
     private val viewModel by viewModels<MainViewModel>()
 
     private var playWhenReady = true
@@ -55,7 +58,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        setupRecyclerView()
+        setupStationRecyclerView()
+        setupStationGroupRecyclerView()
         loadStationGroups()
         loadStations()
 
@@ -68,37 +72,31 @@ class MainActivity : AppCompatActivity() {
 
         mediacontrollerFuture.addListener({
             player = mediacontrollerFuture.get()
-            val uri = Uri.parse("https://listen2.myradio24.com/8226")
+            /*val uri = Uri.parse("https://listen2.myradio24.com/8226")
 
-            loadMediaItem(uri)
+            loadMediaItem(uri)*/
 
         }, MoreExecutors.directExecutor())
 
-
-        /*binding.btGetInfo.setOnClickListener({
-            getMediaItem()
-        })
-
-        binding.btStop.setOnClickListener {
-            player.playWhenReady = false
-            player.stop()
-        }
-
-        binding.btNext.setOnClickListener {
-            //val uri = Uri.parse("https://radio.sweetmelodies.tk:8000/stream1")
-            val uri = Uri.parse("https://jfm1.hostingradio.ru:14536/rcstream.mp3")
-
-            loadMediaItem(uri)
-        }*/
-
         viewModel.getInfo()
+        viewModel.setIsCurrent(1)
+        binding.stationInfoMaterialCardView.visibility = View.GONE
+
+        viewModel.resetAllStations()
+
+        binding.stationControlImageView.setOnClickListener {
+            currentStation?.let {
+                if (it.state == StationState.PLAYING) {
+                    stopPlaying()
+                }
+            }
+        }
     }
 
     private fun loadStationGroups() {
-        viewModel.stationGroups.observe(this, { stationGroupList ->
-            stationGroupList.forEach {
-                addChip(this, binding.chipGroup, it.description, it.id)
-            }
+        viewModel.stationGroups.observe(this, {
+            stationGroupListAdapter?.submitList(null)
+            stationGroupListAdapter?.submitList(it)
         })
     }
 
@@ -109,7 +107,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun setupRecyclerView() {
+    fun setupStationRecyclerView() {
 
         val stationRecyclerView = binding.stationRecyclerView
         stationListAdapter = StationListAdapter()
@@ -121,122 +119,92 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        setupClickListener()
-        //onScrollListener()
+        setupStationRVClickListener()
+        setupStationRVScrollListener()
     }
 
-    private fun setupClickListener() {
+    fun setupStationGroupRecyclerView() {
+
+        val stationGroupRecyclerView = binding.stationGroupRecyclerView
+        stationGroupListAdapter = StationGroupListAdapter()
+        stationGroupRecyclerView?.let {
+            with(it) {
+                adapter = stationGroupListAdapter
+                itemAnimator = null
+                recycledViewPool.setMaxRecycledViews(0, StationGroupListAdapter.MAX_POOL_SIZE)
+            }
+        }
+        setupStationGroupRVClickListener()
+    }
+
+    private fun setupStationGroupRVClickListener() {
+        stationGroupListAdapter?.onStationGroupClickListener = { stationGroup, position ->
+
+            viewModel.setIsCurrent(stationGroup.id)
+
+            currentStationList?.let { csl ->
+                for ((index, value) in csl.withIndex()) {
+                    if (value.groupId == stationGroup.id) {
+                        binding.stationRecyclerView.smoothScrollToPosition(index)
+                        break
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setupStationRVScrollListener() {
+        binding.stationRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                val position = recyclerView.getCurrentPosition()
+
+                currentStationList?.let {
+                    val station = it[position]
+                    viewModel.setIsCurrent(station.groupId)
+                }
+
+            }
+        })
+    }
+
+    fun RecyclerView?.getCurrentPosition(): Int {
+        return (this?.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+    }
+
+    private fun setupStationRVClickListener() {
 
         stationListAdapter?.onStationClickListener = { station, position ->
 
             station.position = position
             prevStation = currentStation
 
-            when(station.state) {
+            when (station.state) {
                 StationState.PLAYING -> {
-                    setStationState(currentStation,StationState.STOPPED)
-                    //station.state = StationState.STOPPED
-
+                    setStationState(currentStation, StationState.STOPPED)
                     currentStation = null
                     stopPlaying()
                 }
                 StationState.LOADED -> {
                 }
                 StationState.STOPPED -> {
-                    //station.state = StationState.PLAYING
-                    setStationState(currentStation,StationState.PLAYING)
-                    setStationState(prevStation,StationState.STOPPED)
+                    setStationState(currentStation, StationState.PLAYING)
+                    setStationState(prevStation, StationState.STOPPED)
 
-                    //stopPrevStation()
                     currentStation = station
                     loadMediaItem(Uri.parse(station.url))
                 }
             }
-            /*
-            if (station.state.equals(StationState.STOPPED)) {
-                station.state = StationState.PLAYING
-
-                stopPrevStation()
-                currentStation = station
-                loadMediaItem(Uri.parse(station.url))
-            } else if (station.state.equals(StationState.PLAYING)) {
-                station.state = StationState.STOPPED
-
-                currentStation = null
-                stopPlaying()
-            }*/
-
-            /*currentStationList?.set(position, station)
-            stationListAdapter?.submitList(currentStationList)
-            stationListAdapter?.notifyItemChanged(position)*/
         }
-    }
-
-    private fun stopPrevStation() {
-        prevStation?.let {
-            it.state = StationState.STOPPED
-            currentStationList?.set(it.position, it)
-            stationListAdapter?.notifyItemChanged(it.position)
-        }
-
-    }
-
-    private fun addChip(
-        context: Context,
-        chipGroup: ChipGroup,
-        chipText: String,
-        chipTag: Int
-    ): Chip {
-        val chip = Chip(context)
-        chip.isCheckable = false
-        chip.text = chipText
-        chip.tag = chipTag
-        chip.chipBackgroundColor =
-            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.colorPrimary))
-        chip.setTextColor(ContextCompat.getColor(context, R.color.md_white))
-        chip.checkedIconTint =
-            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.md_white))
-        chip.isChecked = false
-        chip.chipCornerRadius = 4F
-        chip.isClickable = true
-        chip.chipStrokeWidth = 2F
-        chip.chipStrokeColor =
-            ColorStateList.valueOf(ContextCompat.getColor(context, R.color.md_black))
-        chipGroup.addView(chip)
-
-        chip.setOnClickListener {
-            val a = it.tag as Int
-            val b = 1
-        }
-
-        return chip
-    }
-
-    fun getMediaItem() {
-        try {
-            player?.let {
-                val currentMediaItem = it.currentMediaItem
-                val currentTracks = it.currentTracks
-                val audioAttributes = it.audioAttributes
-
-                val title = it.mediaMetadata.title
-                val station = it.mediaMetadata.station
-                val a = 1
-            }
-        } catch (e: Exception) {
-
-        }
-
-
     }
 
     fun loadMediaItem(uri: Uri) {
         player?.let { player ->
             /* We use setMediaId as a unique identifier for the media (which is needed for mediasession and we do NOT use setUri because we're gonna do
                something like setUri(mediaItem.mediaId) when we need to load the media like we did above in the MusicPlayerService and more precisely when we were building the session */
-            val newItem = MediaItem.Builder()
-                .setMediaId("$uri") /* setMediaId and NOT setUri */
-                .build()
+            val newItem =
+                MediaItem.Builder().setMediaId("$uri") /* setMediaId and NOT setUri */.build()
 
             /* Load it into our activity's MediaController */
             player.setMediaItem(newItem)
@@ -253,6 +221,11 @@ class MainActivity : AppCompatActivity() {
                     Log.d("NoAdsPlayer", "mediaMetadata.genre: ${mediaMetadata.genre}")
                     Log.d("NoAdsPlayer", "mediaMetadata.station: ${mediaMetadata.station}")
                     Log.d("NoAdsPlayer", "mediaMetadata.subtitle: ${mediaMetadata.subtitle}")
+
+                    binding.stationInfoMaterialCardView.visibility = View.VISIBLE
+                    binding.stationTitleTextView.text = currentStation?.name
+                    binding.songTitleTextView.text = mediaMetadata.title
+                    Glide.with(applicationContext).load(R.drawable.outline_stop_circle_48).into(binding.stationControlImageView)
                 }
 
                 override fun onPlaylistMetadataChanged(mediaMetadata: MediaMetadata) {
@@ -267,7 +240,7 @@ class MainActivity : AppCompatActivity() {
                             //changeStationState(StationState.PLAYING)
                             Log.d("NoAdsPlayerPlaybackState", "STATE_READY")
                             //hideProgressBar()
-                            setStationState(currentStation,StationState.PLAYING)
+                            setStationState(currentStation, StationState.PLAYING)
                         }
                         Player.STATE_ENDED -> {
                             //your logic
@@ -276,13 +249,13 @@ class MainActivity : AppCompatActivity() {
                         Player.STATE_BUFFERING -> {
                             Log.d("NoAdsPlayerPlaybackState", "STATE_BUFFERING")
                             //showProgressBar()
-                            setStationState(currentStation,StationState.LOADED)
+                            setStationState(currentStation, StationState.LOADED)
                         }
                         Player.STATE_IDLE -> {
                             Log.d("NoAdsPlayerPlaybackState", "STATE_IDLE")
                             //hideProgressBar()
                             stopPlaying()
-                            setStationState(currentStation,StationState.STOPPED)
+                            setStationState(currentStation, StationState.STOPPED)
 
                             //setStationState(StationState.STOPPED)
                         }
@@ -300,30 +273,17 @@ class MainActivity : AppCompatActivity() {
             exoPlayer.playWhenReady = false
             exoPlayer.stop()
         }
-    }
-
-    private fun showProgressBar() {
-        currentStation?.let {
-            it.state = StationState.LOADED
-            currentStationList?.set(it.position, it)
-            stationListAdapter?.submitList(currentStationList)
-            stationListAdapter?.notifyItemChanged(it.position)
-        }
-
-    }
-
-    private fun hideProgressBar() {
-        currentStation?.let {
-            it.state = StationState.PLAYING
-            currentStationList?.set(it.position, it)
-            stationListAdapter?.submitList(currentStationList)
-            stationListAdapter?.notifyItemChanged(it.position)
-        }
+        Glide.with(applicationContext).load(R.drawable.baseline_play_circle_outline_48).into(binding.stationControlImageView)
+        binding.stationInfoMaterialCardView.visibility = View.GONE
     }
 
     private fun setStationState(station: Station?, state: StationState) {
         station?.let {
-            viewModel.changeStationState(it,state)
+            viewModel.changeStationState(it, state)
         }
+    }
+
+    private fun resetAllStations() {
+        viewModel.resetAllStations()
     }
 }

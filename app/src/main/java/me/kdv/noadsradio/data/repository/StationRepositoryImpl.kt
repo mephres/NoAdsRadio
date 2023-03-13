@@ -37,4 +37,8 @@ class StationRepositoryImpl @Inject constructor(
             }
         }
     }
+
+    override suspend fun resetAllStations() {
+        stationDao.resetAllStations()
+    }
 }
