@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stationCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:strokeWidth="0dp"
+    tools:ignore="ContentDescription"
+    android:backgroundTint="@color/md_grey_700"
+    app:strokeColor="@color/md_black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/stationImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedCornersImageView"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/stationTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/md_grey_50"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/stationControlImageView"
+            app:layout_constraintStart_toEndOf="@+id/stationImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Европа Плюс" />
+
+        <ImageView
+            android:id="@+id/stationControlImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_play_circle_48"
+            app:tint="@color/colorAccent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:indeterminateTint="@color/colorAccent"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/stationControlImageView"
+            app:layout_constraintEnd_toEndOf="@+id/stationControlImageView"
+            app:layout_constraintStart_toStartOf="@+id/stationControlImageView"
+            app:layout_constraintTop_toTopOf="@+id/stationControlImageView" />
+
+        <TextView
+            android:id="@+id/stationStyleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/md_grey_50"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toStartOf="@+id/stationControlImageView"
+            app:layout_constraintStart_toEndOf="@+id/stationImageView"
+            app:layout_constraintTop_toBottomOf="@+id/stationTitleTextView"
+            tools:text="Спокойное" />
+
+        <TextView
+            android:id="@+id/stationSmallTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/stationImageView"
+            app:layout_constraintEnd_toEndOf="@+id/stationImageView"
+            app:layout_constraintStart_toStartOf="@+id/stationImageView"
+            app:layout_constraintTop_toTopOf="@+id/stationImageView"
+            tools:text="TV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
