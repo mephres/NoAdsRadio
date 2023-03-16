@@ -47,7 +47,7 @@ class MusicPlayerService: MediaLibraryService() {
             }).build()
     }
 
-    override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? {
+    override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession {
         return session
     }
 }
