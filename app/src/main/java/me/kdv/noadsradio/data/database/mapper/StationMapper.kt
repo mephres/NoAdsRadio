@@ -24,7 +24,7 @@ class StationMapper @Inject constructor() {
     fun mapDbToEntity(db: StationDb): Station {
         return Station(
             id = db.id,
-            stationId = db.id,
+            stationId = db.stationId,
             groupId = db.groupId,
             groupName = db.groupName,
             name = db.name,
@@ -39,7 +39,7 @@ class StationMapper @Inject constructor() {
     fun mapEntityToDb(entity: Station): StationDb {
         return StationDb(
             id = entity.id,
-            stationId = entity.id,
+            stationId = entity.stationId,
             groupId = entity.groupId,
             groupName = entity.groupName,
             name = entity.name,

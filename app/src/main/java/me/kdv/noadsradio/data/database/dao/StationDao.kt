@@ -16,9 +16,15 @@ interface StationDao {
     @Query("DELETE FROM station")
     suspend fun deleteStations()
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateStation(station: StationDb)
 
     @Query("UPDATE station SET state = :state")
     suspend fun resetAllStations(state: Int = StationState.STOPPED.ordinal)
+
+    @Query("SELECT * FROM station WHERE id = :id")
+    fun getStationById(id: Int): StationDb
+
+    @Query("SELECT * FROM station WHERE url = :url")
+    fun getStationById(url: String): LiveData<StationDb>
 }

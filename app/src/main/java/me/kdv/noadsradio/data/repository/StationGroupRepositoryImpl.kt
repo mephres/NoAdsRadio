@@ -18,7 +18,7 @@ class StationGroupRepositoryImpl @Inject constructor(
 ) : StationGroupRepository {
 
     @OptIn(DelicateCoroutinesApi::class)
-    override suspend fun getStationInfo() {
+    override suspend fun loadStationList() {
         FBDataBase.getStationInfo({ stationList ->
             GlobalScope.launch(Dispatchers.IO) {
 
@@ -31,12 +31,12 @@ class StationGroupRepositoryImpl @Inject constructor(
 
                 stationList.forEach { stationGroupDto ->
                     stationGroupDto.stations?.let { stations ->
-                        val stationsDbList = stations.map {
+                        val stationsDtoList = stations.map {
                             it.groupId = stationGroupDto.id
                             it.groupName = stationGroupDto.description
                             it
                         }
-                        stationRepository.insertStationList(stationsDbList)
+                        stationRepository.insertStationList(stationsDtoList)
                     }
                 }
             }

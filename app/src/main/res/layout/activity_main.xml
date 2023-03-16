@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/md_grey_800"
+        android:background="@color/md_black"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +22,7 @@
         android:id="@+id/stationRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/md_grey_800"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/stationInfoMaterialCardView"
         app:layout_constraintTop_toBottomOf="@+id/stationGroupRecyclerView"
@@ -32,7 +33,7 @@
         android:id="@+id/stationInfoMaterialCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/md_grey_800"
+        android:backgroundTint="@color/md_black"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +90,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.444"
-                app:srcCompat="@drawable/baseline_play_circle_outline_48" />
+                app:srcCompat="@drawable/baseline_stop_48" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

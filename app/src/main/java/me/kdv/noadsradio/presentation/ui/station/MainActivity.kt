@@ -1,5 +1,6 @@
 package me.kdv.noadsradio.presentation.ui.station
 
+import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.net.Uri
 import android.os.Bundle
@@ -17,14 +18,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.common.util.concurrent.MoreExecutors
-import com.intas.metrolog.presentation.ui.events.adapter.StationGroupListAdapter
-import com.intas.metrolog.presentation.ui.events.adapter.StationListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import me.kdv.noadsradio.R
 import me.kdv.noadsradio.databinding.ActivityMainBinding
 import me.kdv.noadsradio.domain.model.Station
 import me.kdv.noadsradio.domain.model.StationState
 import me.kdv.noadsradio.presentation.MusicPlayerService
+import me.kdv.noadsradio.presentation.ui.station.adapter.station.StationListAdapter
+import me.kdv.noadsradio.presentation.ui.station.adapter.station_group.StationGroupListAdapter
 
 
 @UnstableApi
@@ -41,77 +42,69 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<MainViewModel>()
 
-    private var playWhenReady = true
     private var currentStation: Station? = null
     private var prevStation: Station? = null
-    private var playbackPosition = 0L
 
-    /* This is the global variable of the player
-       (which is basically a media controller)
-       you're going to use to control playback,
-       you're not gonna need anything else other than this,
-       which is created from the media controller */
     private var player: Player? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        setupStationRecyclerView()
-        setupStationGroupRecyclerView()
-        loadStationGroups()
-        loadStations()
+        loadStationList()
 
-        /* Creating session token (links our UI with service and starts it) */
+        getStationGroups()
+        getStations()
+        resetAllStations()
+
+        initStationGroupRecyclerView()
+        initStationRecyclerView()
+
+        initMediaPlayer()
+
+        initClickListeners()
+
+        initObservers()
+    }
+
+    private fun initMediaPlayer() {
         val sessionToken =
             SessionToken(applicationContext, ComponentName(this, MusicPlayerService::class.java))
 
-        /* Instantiating our MediaController and linking it to the service using the session token */
-        val mediacontrollerFuture = MediaController.Builder(this, sessionToken).buildAsync()
+        val mediaControllerFuture = MediaController.Builder(this, sessionToken).buildAsync()
 
-        mediacontrollerFuture.addListener({
-            player = mediacontrollerFuture.get()
-            /*val uri = Uri.parse("https://listen2.myradio24.com/8226")
+        mediaControllerFuture.addListener({
+            player = mediaControllerFuture.get()
 
-            loadMediaItem(uri)*/
-
-        }, MoreExecutors.directExecutor())
-
-        viewModel.getInfo()
-        viewModel.setIsCurrent(1)
-        binding.stationInfoMaterialCardView.visibility = View.GONE
-
-        viewModel.resetAllStations()
-
-        binding.stationControlImageView.setOnClickListener {
-            currentStation?.let {
-                if (it.state == StationState.PLAYING) {
-                    stopPlaying()
-                }
+            player?.currentMediaItem?.mediaId?.let {
+                viewModel.setCurrentMediaId(it)
             }
-        }
+        }, MoreExecutors.directExecutor())
     }
 
-    private fun loadStationGroups() {
+    private fun getStationGroups() {
         viewModel.stationGroups.observe(this, {
             stationGroupListAdapter?.submitList(null)
             stationGroupListAdapter?.submitList(it)
         })
     }
 
-    private fun loadStations() {
+    private fun getStations() {
         viewModel.stations.observe(this, {
             stationListAdapter?.submitList(it)
             currentStationList = it.toMutableList()
         })
+
+        viewModel.currentMediaId.observe(this, {
+            setStationIsPlayingByMediaId(it)
+        })
     }
 
-    fun setupStationRecyclerView() {
+    private fun initStationRecyclerView() {
 
         val stationRecyclerView = binding.stationRecyclerView
         stationListAdapter = StationListAdapter()
-        stationRecyclerView?.let {
+        stationRecyclerView.let {
             with(it) {
                 adapter = stationListAdapter
                 itemAnimator = null
@@ -119,28 +112,28 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        setupStationRVClickListener()
-        setupStationRVScrollListener()
+        initStationRVClickListener()
+        initStationRVScrollListener()
     }
 
-    fun setupStationGroupRecyclerView() {
+    private fun initStationGroupRecyclerView() {
 
         val stationGroupRecyclerView = binding.stationGroupRecyclerView
         stationGroupListAdapter = StationGroupListAdapter()
-        stationGroupRecyclerView?.let {
+        stationGroupRecyclerView.let {
             with(it) {
                 adapter = stationGroupListAdapter
                 itemAnimator = null
                 recycledViewPool.setMaxRecycledViews(0, StationGroupListAdapter.MAX_POOL_SIZE)
             }
         }
-        setupStationGroupRVClickListener()
+        initStationGroupRVClickListener()
     }
 
-    private fun setupStationGroupRVClickListener() {
+    private fun initStationGroupRVClickListener() {
         stationGroupListAdapter?.onStationGroupClickListener = { stationGroup, position ->
 
-            viewModel.setIsCurrent(stationGroup.id)
+            viewModel.setIsCurrentStationGroup(stationGroup.id)
 
             currentStationList?.let { csl ->
                 for ((index, value) in csl.withIndex()) {
@@ -153,27 +146,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupStationRVScrollListener() {
+    private fun initStationRVScrollListener() {
         binding.stationRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val position = recyclerView.getCurrentPosition()
+                val position = recyclerView.getCurrentPosition(dy)
 
                 currentStationList?.let {
                     val station = it[position]
-                    viewModel.setIsCurrent(station.groupId)
+                    viewModel.setIsCurrentStationGroup(station.groupId)
                 }
-
             }
         })
     }
 
-    fun RecyclerView?.getCurrentPosition(): Int {
-        return (this?.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+    fun RecyclerView.getCurrentPosition(dy: Int): Int {
+        val manager = this.layoutManager as LinearLayoutManager
+        return if (dy > 0) {
+            manager.findLastVisibleItemPosition()
+        } else {
+            manager.findFirstVisibleItemPosition()
+        }
     }
 
-    private fun setupStationRVClickListener() {
+    private fun initStationRVClickListener() {
 
         stationListAdapter?.onStationClickListener = { station, position ->
 
@@ -189,24 +186,26 @@ class MainActivity : AppCompatActivity() {
                 StationState.LOADED -> {
                 }
                 StationState.STOPPED -> {
-                    setStationState(currentStation, StationState.PLAYING)
+
                     setStationState(prevStation, StationState.STOPPED)
 
                     currentStation = station
-                    loadMediaItem(Uri.parse(station.url))
+
+                    setStationState(station, StationState.LOADED)
+                    playStation(station)
                 }
             }
         }
     }
 
-    fun loadMediaItem(uri: Uri) {
-        player?.let { player ->
-            /* We use setMediaId as a unique identifier for the media (which is needed for mediasession and we do NOT use setUri because we're gonna do
-               something like setUri(mediaItem.mediaId) when we need to load the media like we did above in the MusicPlayerService and more precisely when we were building the session */
-            val newItem =
-                MediaItem.Builder().setMediaId("$uri") /* setMediaId and NOT setUri */.build()
+    private fun playStation(station: Station) {
 
-            /* Load it into our activity's MediaController */
+        player?.let { player ->
+
+            val uri = Uri.parse(station.url)
+
+            val newItem = MediaItem.Builder().setMediaId("$uri").build()
+
             player.setMediaItem(newItem)
             player.prepare()
             player.play()
@@ -214,53 +213,31 @@ class MainActivity : AppCompatActivity() {
             player.addListener(object : Player.Listener {
                 override fun onMediaMetadataChanged(mediaMetadata: MediaMetadata) {
                     super.onMediaMetadataChanged(mediaMetadata)
-                    Log.d("NoAdsPlayer", "mediaMetadata.title: ${mediaMetadata.title}")
-                    Log.d("NoAdsPlayer", "mediaMetadata.artist: ${mediaMetadata.artist}")
-                    Log.d("NoAdsPlayer", "mediaMetadata.albumArtist: ${mediaMetadata.albumArtist}")
-                    Log.d("NoAdsPlayer", "mediaMetadata.albumTitle: ${mediaMetadata.albumTitle}")
-                    Log.d("NoAdsPlayer", "mediaMetadata.genre: ${mediaMetadata.genre}")
-                    Log.d("NoAdsPlayer", "mediaMetadata.station: ${mediaMetadata.station}")
-                    Log.d("NoAdsPlayer", "mediaMetadata.subtitle: ${mediaMetadata.subtitle}")
 
                     binding.stationInfoMaterialCardView.visibility = View.VISIBLE
                     binding.stationTitleTextView.text = currentStation?.name
                     binding.songTitleTextView.text = mediaMetadata.title
-                    Glide.with(applicationContext).load(R.drawable.outline_stop_circle_48).into(binding.stationControlImageView)
-                }
-
-                override fun onPlaylistMetadataChanged(mediaMetadata: MediaMetadata) {
-                    super.onPlaylistMetadataChanged(mediaMetadata)
-                    val a = 1
+                    Glide.with(applicationContext).load(R.drawable.baseline_stop_48)
+                        .into(binding.stationControlImageView)
                 }
 
                 override fun onPlaybackStateChanged(playbackState: Int) {
                     super.onPlaybackStateChanged(playbackState)
                     when (playbackState) { // check player play back state
                         Player.STATE_READY -> {
-                            //changeStationState(StationState.PLAYING)
                             Log.d("NoAdsPlayerPlaybackState", "STATE_READY")
-                            //hideProgressBar()
                             setStationState(currentStation, StationState.PLAYING)
                         }
                         Player.STATE_ENDED -> {
-                            //your logic
                             Log.d("NoAdsPlayerPlaybackState", "STATE_ENDED")
                         }
                         Player.STATE_BUFFERING -> {
                             Log.d("NoAdsPlayerPlaybackState", "STATE_BUFFERING")
-                            //showProgressBar()
                             setStationState(currentStation, StationState.LOADED)
                         }
                         Player.STATE_IDLE -> {
                             Log.d("NoAdsPlayerPlaybackState", "STATE_IDLE")
-                            //hideProgressBar()
                             stopPlaying()
-                            setStationState(currentStation, StationState.STOPPED)
-
-                            //setStationState(StationState.STOPPED)
-                        }
-                        else -> {
-                            //playerView.hideController()
                         }
                     }
                 }
@@ -269,12 +246,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun stopPlaying() {
-        player?.let { exoPlayer ->
-            exoPlayer.playWhenReady = false
-            exoPlayer.stop()
+        player?.let { player ->
+            player.playWhenReady = false
+            player.stop()
         }
-        Glide.with(applicationContext).load(R.drawable.baseline_play_circle_outline_48).into(binding.stationControlImageView)
+
         binding.stationInfoMaterialCardView.visibility = View.GONE
+
+        setStationState(currentStation, StationState.STOPPED)
     }
 
     private fun setStationState(station: Station?, state: StationState) {
@@ -285,5 +264,45 @@ class MainActivity : AppCompatActivity() {
 
     private fun resetAllStations() {
         viewModel.resetAllStations()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun setStationIsPlayingByMediaId(mediaId: String) {
+
+        currentStationList?.forEach {
+
+            if (it.url.equals(mediaId)) {
+                setStationState(it, StationState.PLAYING)
+                currentStation = it
+            }
+        }
+        stationListAdapter?.notifyDataSetChanged()
+    }
+
+    private fun loadStationList() {
+        viewModel.loadStationList()
+    }
+
+    private fun initClickListeners() {
+        binding.stationControlImageView.setOnClickListener {
+            currentStation?.let {
+                if (it.state == StationState.PLAYING) {
+                    stopPlaying()
+                }
+            }
+        }
+    }
+
+    private fun initObservers() {
+        viewModel.currentMediaId.observe(this, {
+            viewModel.getCurrentPlayingStation(it).observe(this, {
+                runOnUiThread {
+                    binding.stationInfoMaterialCardView.visibility = View.VISIBLE
+                    binding.stationTitleTextView.text = it.name
+                    Glide.with(applicationContext).load(R.drawable.baseline_stop_48)
+                        .into(binding.stationControlImageView)
+                }
+            })
+        })
     }
 }

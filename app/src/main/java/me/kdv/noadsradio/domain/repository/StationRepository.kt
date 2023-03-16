@@ -10,4 +10,5 @@ interface StationRepository {
     suspend fun updateStation(station: Station)
     fun getStations(): LiveData<List<Station>>
     suspend fun resetAllStations()
+    fun getStationByUrl(url: String): LiveData<Station>
 }

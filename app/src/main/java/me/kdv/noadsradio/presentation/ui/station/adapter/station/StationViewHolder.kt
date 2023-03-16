@@ -1,4 +1,4 @@
-package com.intas.metrolog.presentation.ui.events.adapter
+package me.kdv.noadsradio.presentation.ui.station.adapter.station
 
 import android.view.View
 import android.widget.ImageView
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import me.kdv.noadsradio.R
 
-class StationViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+class StationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val stationTitle = view.findViewById(R.id.stationTitleTextView) as TextView
     val stationStyle = view.findViewById(R.id.stationStyleTextView) as TextView
     val stationSmallTitle = view.findViewById(R.id.stationSmallTitleTextView) as TextView

@@ -1,7 +1,8 @@
 package me.kdv.noadsradio.presentation.ui.station
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -18,11 +19,23 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     val stationGroups = stationGroupRepository.getStationGroups()
-    val stations = stationRepository.getStations().distinctUntilChanged()
+    val stations = stationRepository.getStations()
 
-    fun getInfo() {
+    private var _currentMediaId : MutableLiveData<String> = MutableLiveData()
+    val currentMediaId: LiveData<String>
+    get() = _currentMediaId
+
+    fun setCurrentMediaId(mediaId: String) {
+        _currentMediaId.value = mediaId
+    }
+
+    fun getCurrentPlayingStation(url: String): LiveData<Station> {
+        return stationRepository.getStationByUrl(url)
+    }
+
+    fun loadStationList() {
         viewModelScope.launch {
-            stationGroupRepository.getStationInfo()
+            stationGroupRepository.loadStationList()
         }
     }
 
@@ -33,7 +46,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun setIsCurrent(stationGroup: Int) {
+    fun setIsCurrentStationGroup(stationGroup: Int) {
 
         viewModelScope.launch {
             stationGroups.value?.forEach {

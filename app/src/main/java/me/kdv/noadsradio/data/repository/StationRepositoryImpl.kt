@@ -12,7 +12,7 @@ import javax.inject.Inject
 class StationRepositoryImpl @Inject constructor(
     private val stationMapper: StationMapper,
     private val stationDao: StationDao
-): StationRepository {
+) : StationRepository {
 
     override suspend fun insertStationList(stations: List<StationDto>) {
         val dbList = stations.map {
@@ -40,5 +40,11 @@ class StationRepositoryImpl @Inject constructor(
 
     override suspend fun resetAllStations() {
         stationDao.resetAllStations()
+    }
+
+    override fun getStationByUrl(url: String): LiveData<Station> {
+        return Transformations.map(stationDao.getStationById(url)) {
+            stationMapper.mapDbToEntity(it)
+        }
     }
 }

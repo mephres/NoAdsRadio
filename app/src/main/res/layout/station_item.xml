@@ -9,8 +9,10 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="2dp"
     app:cardUseCompatPadding="true"
-    app:strokeWidth="2dp"
-    tools:ignore="ContentDescription">
+    app:strokeWidth="0dp"
+    tools:ignore="ContentDescription"
+    android:backgroundTint="@color/md_grey_700"
+    app:strokeColor="@color/md_black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -37,7 +39,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="TextView"
+            android:textColor="@color/md_grey_50"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/stationControlImageView"
@@ -54,15 +56,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_play_circle_outline_48" />
+            app:srcCompat="@drawable/ic_play_circle_48"
+            app:tint="@color/colorAccent" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:visibility="invisible"
             android:indeterminateTint="@color/colorAccent"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/stationControlImageView"
             app:layout_constraintEnd_toEndOf="@+id/stationControlImageView"
             app:layout_constraintStart_toStartOf="@+id/stationControlImageView"
@@ -75,8 +78,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
-            android:text="TextView"
-            android:textSize="10sp"
+            android:textColor="@color/md_grey_50"
+            android:textSize="11sp"
             app:layout_constraintEnd_toStartOf="@+id/stationControlImageView"
             app:layout_constraintStart_toEndOf="@+id/stationImageView"
             app:layout_constraintTop_toBottomOf="@+id/stationTitleTextView"
@@ -86,15 +89,15 @@
             android:id="@+id/stationSmallTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="TV"
+            android:textColor="@color/md_white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/stationImageView"
             app:layout_constraintEnd_toEndOf="@+id/stationImageView"
             app:layout_constraintStart_toStartOf="@+id/stationImageView"
             app:layout_constraintTop_toTopOf="@+id/stationImageView"
-            android:textColor="@color/md_white"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:visibility="gone"/>
+            tools:text="TV" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -1,9 +1,9 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.NoAdsRadio" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.NoAdsRadio" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/md_purple_500</item>
-        <item name="colorPrimaryVariant">@color/md_purple_700</item>
+        <item name="colorPrimary">@color/md_black</item>
+        <item name="colorPrimaryVariant">@color/md_black</item>
         <item name="colorOnPrimary">@color/md_white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/md_teal_200</item>

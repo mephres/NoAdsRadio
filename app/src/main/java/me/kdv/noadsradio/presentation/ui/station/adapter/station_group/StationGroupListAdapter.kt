@@ -1,4 +1,4 @@
-package com.intas.metrolog.presentation.ui.events.adapter
+package me.kdv.noadsradio.presentation.ui.station.adapter.station_group
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.ListAdapter
 import me.kdv.noadsradio.R
 import me.kdv.noadsradio.domain.model.StationGroup
 import me.kdv.noadsradio.presentation.ui.station.adapter.callback.StationGroupDiffCallback
-
 
 class StationGroupListAdapter : ListAdapter<StationGroup, StationGroupViewHolder>(
     StationGroupDiffCallback()
@@ -23,8 +22,13 @@ class StationGroupListAdapter : ListAdapter<StationGroup, StationGroupViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StationGroupViewHolder {
 
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.station_group_item, parent, false)
+        val view = LayoutInflater
+            .from(parent.context)
+            .inflate(
+                R.layout.station_group_item,
+                parent,
+                false
+            )
         context = parent.context
         return StationGroupViewHolder(view)
     }
@@ -49,13 +53,10 @@ class StationGroupListAdapter : ListAdapter<StationGroup, StationGroupViewHolder
             )
         }
         holder.stationGroupTitle.text = stationGroup.description.uppercase()
+
         holder.stationGroupTitle.setOnClickListener {
             onStationGroupClickListener?.invoke(stationGroup, position)
         }
-    }
-
-    override fun onViewRecycled(holder: StationGroupViewHolder) {
-        super.onViewRecycled(holder)
     }
 
     override fun getItemViewType(position: Int): Int {
