@@ -1,0 +1,14 @@
+Как получить прямую ссылку на поток любой онлайновой радиостанции
+https://lifehacker.ru/kak-poluchit-pryamuyu-ssylku-na-potok-lyuboj-onlajnovoj-radiostancii/
+
+https://listen2.myradio24.com/8226
+
+ExoPlayer in Android 2022 — Getting Started
+https://medium.com/codex/exoplayer-in-android-2022-getting-started-6edcb2b399e5
+
+https://medium.com/fungjai/playing-video-by-exoplayer-b97903be0b33
+
+https://storage.googleapis.com/exoplayer-test-media-0/play.mp3
+
+How to use media3 (with Exoplayer + MediaSessionService)
+https://stackoverflow.com/questions/72560520/how-to-use-media3-with-exoplayer-mediasessionservice/75440451#75440451

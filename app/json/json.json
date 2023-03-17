@@ -1,0 +1,458 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Soft",
+      "description": "Спокойное",
+      "stations": [
+        {
+          "id": 1,
+          "name": "Атмосфера",
+          "url": "https://listen5.myradio24.com/atmo",
+          "image": "https://topradio.me/assets/image/radio/180/radio-atmosfera.png",
+          "site": "http://atmoradio.ru"
+        },
+        {
+          "id": 2,
+          "name": "Instrumental Hits",
+          "url": "https://panel.retrolandigital.com:8130/listen",
+          "image": "https://instrumentalhitsradio.com/assets/images/mini-copy-2-208x207-2.jpg",
+          "site": "https://instrumentalhitsradio.com"
+        },
+        {
+          "id": 3,
+          "name": "Sweet Melodies",
+          "url": "https://radio.sweetmelodies.tk:8000/stream1",
+          "image": "https://www.radio.net/images/broadcasts/24/a4/106798/2/c300.png"
+        },
+        {
+          "id": 4,
+          "name": "Slow Radio",
+          "url": "https://bluford.torontocast.com/proxy/wynekpwy/slowradio",
+          "image": "https://nl.slowradio.com/img/radio/players/slplayer.png",
+          "site": "https://www.slowradio.com"
+        },
+        {
+          "id": 5,
+          "name": "Chillwave & Retrowave",
+          "url": "https://clubvid.xyz/level3",
+          "image": "http://retrowave.ru/img/share.png",
+          "site": "https://lounge.luxury",
+          "no_jingle": true
+        },
+        {
+          "id": 6,
+          "name": "Relax Live",
+          "url": "https://stream-31.zeno.fm/up0tg8z405quv",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbvlbatTJuQQhWURhZzoLBLruV_nyNBndLag&usqp=CAU",
+          "site": "",
+          "no_jingle": true
+        },
+        {
+          "id": 7,
+          "name": "3 Music Harmony",
+          "url": "https://misato.ru-hoster.com:8057/stream",
+          "image": "https://www.radio.net/images/broadcasts/25/fa/38669/1/c300.png",
+          "site": "",
+          "no_jingle": true
+        },
+        {
+          "id": 8,
+          "name": "Relaxation Island",
+          "url": "https://www.liveradio.es/http://198.178.123.5:7932/stream",
+          "image": "http://relaxation-island.com/relax-island-new-top2.jpg",
+          "site": "http://relaxation-island.com/"
+        },
+        {
+          "id": 9,
+          "name": "Ambient Sleeping Pill (ночь)",
+          "url": "https://radio.stereoscenic.com/asp-s",
+          "image": "https://pcradio.ru/images/stations/61b09c651936f.jpg",
+          "site": "https://ambientsleepingpill.com",
+          "no_jingle": true
+        },
+        {
+          "id": 10,
+          "name": "a.m. Ambient (день)",
+          "url": "https://radio.stereoscenic.com/ama-s",
+          "image": "https://pcradio.ru/images/stations/61b09c651936f.jpg",
+          "site": "https://amambient.com",
+          "no_jingle": true
+        },
+        {
+          "id": 11,
+          "name": "Enigmatic Station",
+          "url": "https://listen2.myradio24.com/8226",
+          "image": "https://www.radio.net/images/broadcasts/fd/c5/39487/1/c300.png",
+          "site": "http://enigmatic.su"
+        },
+        {
+          "id": 12,
+          "name": "Play Lounge",
+          "url": "",
+          "image": "",
+          "site": ""
+        },
+        {
+          "id": 13,
+          "name": "Lounge Radio",
+          "url": "https://fr1.streamhosting.ch/lounge128.mp3",
+          "image": "http://api.my-radios.com/images/thumb.php?countryCode=CH&name=23704-3893380.png&size=200",
+          "site": "https://lounge-radio.com"
+        },
+        {
+          "id": 14,
+          "name": "Chillout Crooze",
+          "url": "https://streaming.shoutcast.com/chillout-crooze-mp3",
+          "image": "https://www.radio.net/images/broadcasts/9a/29/108522/1/c300.png",
+          "site": "https://crooze.eu"
+        },
+        {
+          "id": 15,
+          "name": "Easy Crooze",
+          "url": "https://streaming.shoutcast.com/easy-crooze-mp3",
+          "image": "https://crooze.eu/wp-content/uploads/EASY-CROOZE-512x512px-1.png",
+          "site": "https://crooze.eu"
+        },
+        {
+          "id": 16,
+          "name": "Luxury Lounge",
+          "url": "https://clubvid.xyz/level2",
+          "image": "https://eoouae45rgb.exactdn.com/2021/10/Luxury-Lounge-Radio%40660x550.jpg",
+          "site": "https://lounge.luxury"
+        },
+        {
+          "id": 17,
+          "name": "Звуки природы",
+          "url": "https://nature-rex.radioca.st/stream",
+          "image": "https://pcradio.ru/images/stations/62ea3eb8bb557.jpg",
+          "site": "http://www.ambinatureradio.com"
+        },
+        {
+          "id": 18,
+          "name": "kamchatkalive chillout",
+          "url": "https://radio.kamchatkalive.ru:8103/chillout",
+          "image": "https://kamchatkalive.ru/img/chillout.jpg",
+          "site": "http://kamchatkalive.ru"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pop",
+      "description": "Поп",
+      "stations": [
+        {
+          "id": 1,
+          "name": "Star Radio Official",
+          "url": "https://streaming.radio.co/saf5721deb/listen",
+          "image": "https://topradio.me/assets/image/radio/180/star-official.jpg",
+          "site": "http://www.star-radio.net"
+        },
+        {
+          "id": 2,
+          "name": "TNT Radio",
+          "url": "https://usa18.fastcast4u.com/proxy/tanderse2?mp=/1",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmITvvdQWruHTjNKrabSLUAyrafSLq4XUeJhTPXwUUzgy9iUG-9TIi0meDHIysh9OFiCI&usqp=CAU",
+          "site": "http://www.shoutcast.com"
+        },
+        {
+          "id": 3,
+          "name": "Only Romantic",
+          "url": "https://only-romantic-radio.stream.laut.fm/only-romantic-radio",
+          "image": "https://www.radio.net/images/broadcasts/a1/30/114236/1/c300.png",
+          "site": "http://laut.fm/only-romantic-radio"
+        },
+        {
+          "id": 4,
+          "name": "Hit Radio Fr",
+          "url": "https://elder.radioca.st/stream",
+          "image": "http://api.my-radios.com/images/thumb.php?countryCode=FR&name=29133-8760552.png&size=200",
+          "site": ""
+        },
+        {
+          "id": 5,
+          "name": "Музыка Еврохит ТОП-40",
+          "url": "https://europaplus.hostingradio.ru:8014/ep-top256.mp3",
+          "image": "https://musictorrent.ru/uploads/posts/2023-02/1677094455_43fc780b77250cfeb6c2699aaa58e0bf.jpg",
+          "site": ""
+        },
+        {
+          "id": 6,
+          "name": "Новинки радио Европа плюс",
+          "url": "https://europaplus.hostingradio.ru:8014/ep-new128.mp3",
+          "image": "https://vo-radio.ru/images/logoweb1/evropa-plus-180.jpg",
+          "site": ""
+        },
+        {
+          "id": 7,
+          "name": "Play Radio | More Hits",
+          "url": "https://www.liveradio.es/https://stream.radiojar.com/d9cm273ystzuv",
+          "image": "https://admuzzum.xdevel.com/cloud/x/cid/35/im/png/XZXY/X/YQ/037b3fa2ba3da8fff6f5606a9de40299.png",
+          "site": "www.liveradio.es"
+        },
+        {
+          "id": 8,
+          "name": "Radio Five",
+          "url": "https://radiofive.ru:8443/radio",
+          "image": "https://www.radio.net/images/broadcasts/ac/45/3247/1/c300.png",
+          "site": "https://radiofive.ru"
+        },
+        {
+          "id": 9,
+          "name": "Радио русских песен",
+          "url": "https://listen.rusongs.ru/ru-mp3-128",
+          "image": "https://top-radio.ru/assets/image/radio/180/russong.png",
+          "site": "http://www.rusongs.ru"
+        },
+        {
+          "id": 10,
+          "name": "Радио Пассаж",
+          "url": "https://listen.radiopassazh.ru/aac-64",
+          "image": "https://top-radio.ru/assets/image/radio/180/passaj.jpg",
+          "site": "http://www.radiopassazh.ru"
+        },
+        {
+          "id": 11,
+          "name": "Radyo Pop",
+          "url": "https://www.liveradio.es/http://31.210.152.98/stream",
+          "image": "https://www.radio.de/images/broadcasts/ca/5b/121059/1/c300.png",
+          "site": "http://www.radyopop.com"
+        },
+        {
+          "id": 12,
+          "name": "Радио Ангелов",
+          "url": "https://listen6.myradio24.com/angels",
+          "image": "https://radiopotok.ru/f/station/512/1143.png",
+          "site": "https://AngelsRadio.ru"
+        },
+        {
+          "id": 13,
+          "name": "Виктори",
+          "url": "https://aska.ru-hoster.com:8092/stream",
+          "image": "https://top-radio.ru/assets/image/radio/180/radiovictoree.jpg",
+          "site": "http://victoree.ru"
+        },
+        {
+          "id": 14,
+          "name": "Play Radio",
+          "url": "https://stream.radiojar.com/0zs50dbr274tv",
+          "image": "https://admuzzum.xdevel.com/cloud/x/cid/35/im/png/XZXY/X/YQ/037b3fa2ba3da8fff6f5606a9de40299.png",
+          "site": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Dance",
+      "description": "Dance",
+      "stations": [
+        {
+          "id": 1,
+          "name": "Relax Club (Deep House)",
+          "url": "https://r163-172-146-183.relay.radiotoolkit.com:30003/rcmdeep",
+          "image": "https://seeded-session-images.scdn.co/v1/img/artist/4A3bzcsz9J9Yq4PlIrLRmV/en",
+          "site": "",
+          "no_jingle": true
+        },
+        {
+          "id": 2,
+          "name": "Generation Dance",
+          "url": "https://generationdance.lu/radio/8030/hd",
+          "image": "https://generation.dance/wp-content/uploads/2021/07/cropped-logo_etire.png",
+          "site": "https://generation.dance"
+        },
+        {
+          "id": 3,
+          "name": "Dance Wave",
+          "url": "http://stream.dancewave.online:8080/dance.mp3",
+          "image": "https://top-radio.ru/assets/image/radio/180/dance-wawe.png",
+          "site": ""
+        },
+        {
+          "id": 4,
+          "name": "Ural Sound FM | Deep",
+          "url": "https://www.liveradio.es/http://212.33.245.151:8000/uralsoundfm",
+          "image": "https://topradio.me/assets/image/radio/180/uralsoundfm.jpg",
+          "site": "https://vk.com/uralsoundfm"
+        },
+        {
+          "id": 5,
+          "name": "DJetRadio",
+          "url": "https://www.liveradio.es/http://djetradio.ru:8000/djetradio_128",
+          "image": "https://top-radio.ru/assets/image/radio/180/djet-radio.jpg",
+          "site": "http://djetradio.ru/"
+        },
+        {
+          "id": 6,
+          "name": "Радио Play FM",
+          "url": "https://misato.ru-hoster.com:8052/playfm",
+          "image": "https://img.radios.com.br/radio/lg/radio134920_1579517328.jpg",
+          "site": "http://playfm.ucoz.ru/"
+        },
+        {
+          "id": 7,
+          "name": "RSTV Dance",
+          "url": "https://stream-42.zeno.fm/putwpru7568uv",
+          "image": "http://mnogoradio.ru/images/RSTV-dance.jpg",
+          "site": ""
+        },
+        {
+          "id": 8,
+          "name": "Dance Radio",
+          "url": "https://26383.live.streamtheworld.com/SAM03AAC415_SC",
+          "image": "https://play-lh.googleusercontent.com/9uGeCDg5jiByz4h9Lg_2a3_swDJe1YPgQKx5K3sD-yqV8erXB9Y2V2NTyZRZw25yiw",
+          "site": "http://spacial.com"
+        },
+        {
+          "id": 9,
+          "name": "Dance 98.5",
+          "url": "https://strw1.openstream.co/1238",
+          "image": "https://www.radio.net/images/broadcasts/a3/b3/143872/1/c300.png",
+          "site": "https://dance98.com"
+        },
+        {
+          "id": 10,
+          "name": "Play Mix",
+          "url": "https://cloud.playradio.one:8555/mix128.mp3",
+          "image": "https://cdn-profiles.tunein.com/s206064/images/logod.jpg?t=637236260380000000",
+          "site": "http://www.playradio.gr"
+        },
+        {
+          "id": 11,
+          "name": "kamchatkalive dance",
+          "url": "https://radio.kamchatkalive.ru:8103/dance",
+          "image": "https://kamchatkalive.ru/img/dance.jpg",
+          "site": "kamchatkalive.ru"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Retro",
+      "description": "Ретро",
+      "stations": [
+        {
+          "id": 1,
+          "name": "Радио Классик",
+          "url": "https://jfm1.hostingradio.ru:14536/rcstream.mp3",
+          "image": "http://online-red.com/images/radio-logo/classicfm.png",
+          "site": "http://radioclassicfm.ru",
+          "no_jingle": true
+        },
+        {
+          "id": 2,
+          "name": "D. I. Classical Music",
+          "url": "https://rbx2.hnux.com/http://e12619.cloudrad.io:8978/;",
+          "image": "https://mediaprocessor.websimages.com/width/107/crop/0,0,107x107/imageprocessor.websimages.com/width/107/crop/0,0,107x107/www.di-radio.com/DI%20metal%20button%201.png",
+          "site": "http://www.digitalimpulse-radio.com/"
+        },
+        {
+          "id": 3,
+          "name": "Советские песни",
+          "url": "https://sovetskie-pesni.ru:8005/stream",
+          "image": "https://online-red.com/images/radio-logo/sovetskie-pesni.png",
+          "site": "https://sovetskie-pesni.ru"
+        },
+        {
+          "id": 4,
+          "name": "Love Times",
+          "url": "https://c15.radioboss.fm:18152/stream",
+          "image": "https://www.radiolovetimes.com/wp-content/uploads/2022/10/radio-lovetimes-icon.png",
+          "site": "http://www.radiolovetimes.com"
+        },
+        {
+          "id": 5,
+          "name": "Hit Radio Fr 80-90's",
+          "url": "https://www.liveradio.es/http://nebula.shoutca.st:8616/;stream.mp3",
+          "image": "http://api.my-radios.com/images/thumb.php?countryCode=FR&name=29133-8760552.png&size=200",
+          "site": ""
+        },
+        {
+          "id": 6,
+          "name": "Play Gold Radio",
+          "url": "https://stream.radiojar.com/431m8b6qcm5tv",
+          "image": "https://cdn.e-radio.gr/logos/gr/500/playgold.png",
+          "site": ""
+        },
+        {
+          "id": 7,
+          "name": "D. I. Dance 90's",
+          "url": "https://rbx2.hnux.com/http://e12286.cloudrad.io:8643/;",
+          "image": "https://mediaprocessor.websimages.com/width/107/crop/0,0,107x107/imageprocessor.websimages.com/width/107/crop/0,0,107x107/www.di-radio.com/DI%20metal%20button%201.png",
+          "site": "http://www.di-radio.com/"
+        },
+        {
+          "id": 8,
+          "name": "Radio 80s Planet",
+          "url": "https://str3.openstream.co/560",
+          "image": "https://cdn-profiles.tunein.com/s310207/images/logog.jpg?t=1",
+          "site": "http://80splanet.com"
+        },
+        {
+          "id": 9,
+          "name": "Dance Wave Retro",
+          "url": "http://stream2.dancewave.online:8080/retrodance.ogg",
+          "image": "https://radio-muzyka.ru/img/48.jpg",
+          "site": "https://retro.dacemwave.online"
+        },
+        {
+          "id": 10,
+          "name": "Radio SC",
+          "url": "https://www.liveradio.es/http://akl.sytes.net:8000/sc.mp3",
+          "image": "",
+          "site": ""
+        },
+        {
+          "id": 11,
+          "name": "True Colors Radio",
+          "url": "https://listen7.myradio24.com/45329",
+          "image": "https://top-radio.ru/assets/image/radio/180/true-colors-radio.jpg",
+          "site": "https://truecolorsradio.ru"
+        },
+        {
+          "id": 12,
+          "name": "Радио 7 - Настроение счастья",
+          "url": "https://radio7.hostingradio.ru:8040/radio7_happiness64.aacp",
+          "image": "https://top-radio.ru/assets/image/radio/180/7-Na-semi-xolmax.png",
+          "site": ""
+        },
+        {
+          "id": 13,
+          "name": "Радио 7 - Настроение любить",
+          "url": "https://radio7.hostingradio.ru:8040/radio7_love64.aacp",
+          "image": "https://top-radio.ru/assets/image/radio/180/r7-love.png",
+          "site": ""
+        },
+        {
+          "id": 14,
+          "name": "Радио 7 - Наедине с музыкой",
+          "url": "https://radio7.hostingradio.ru:8040/radio7_alone64.aacp",
+          "image": "https://top-radio.ru/assets/image/radio/180/r7-alone.png",
+          "site": ""
+        },
+        {
+          "id": 15,
+          "name": "Музыка старого радио",
+          "url": "https://str3.pcradio.ru/staroe_music-hi",
+          "image": "https://top-radio.ru/assets/image/radio/180/staroe-radio.jpg",
+          "site": "http://www.staroeradio.ru/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Rock",
+      "description": "Рок",
+      "stations": [
+        {
+          "id": 1,
+          "name": "kamchatkalive rock",
+          "url": "https://radio.kamchatkalive.ru:8103/rock",
+          "image": "https://kamchatkalive.ru/img/rock.jpg",
+          "site": "http://kamchatkalive.ru"
+        }
+      ]
+    }
+  ]
+}
