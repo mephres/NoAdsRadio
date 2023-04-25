@@ -1,12 +1,20 @@
 package me.kdv.noadsradio.presentation.ui.station.adapter.station
 
 import android.content.Context
+import android.graphics.ColorFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebSettings
+import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ListAdapter
+import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieDrawable
+import com.airbnb.lottie.LottieProperty
+import com.airbnb.lottie.SimpleColorFilter
+import com.airbnb.lottie.model.KeyPath
+import com.airbnb.lottie.value.LottieValueCallback
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
@@ -47,6 +55,17 @@ class StationListAdapter : ListAdapter<Station, StationViewHolder>(StationDiffCa
         drawStationState(holder = holder, station = station)
         drawStationLogo(holder = holder, station = station)
 
+        holder.stationJingleAnimationView.repeatCount = LottieDrawable.INFINITE
+
+        if (!station.noJingle) {
+            holder.stationJingleAnimationView.visibility = View.GONE
+            holder.stationJingleAnimationView.cancelAnimation()
+        } else {
+            holder.stationJingleAnimationView.changeColor(R.color.colorAccent)
+            holder.stationJingleAnimationView.visibility = View.VISIBLE
+            holder.stationJingleAnimationView.playAnimation()
+        }
+
         holder.stationControlImageView.setOnClickListener {
 
             Glide.with(context)
@@ -56,6 +75,20 @@ class StationListAdapter : ListAdapter<Station, StationViewHolder>(StationDiffCa
 
             notifyItemChanged(position)
             onStationClickListener?.invoke(station, position)
+        }
+    }
+
+    private fun LottieAnimationView.changeColor(
+        @ColorRes colorRes: Int
+    ) {
+        val color = ContextCompat.getColor(context, colorRes)
+        val filter = SimpleColorFilter(color)
+
+        arrayOf("music icon for micro interaction Outlines", "Shape Layer 2").forEach {
+            val keyPath = KeyPath(it, "**")
+            val callback: LottieValueCallback<ColorFilter> = LottieValueCallback(filter)
+
+            addValueCallback(keyPath, LottieProperty.COLOR_FILTER, callback)
         }
     }
 

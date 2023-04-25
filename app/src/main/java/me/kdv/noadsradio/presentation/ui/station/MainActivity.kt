@@ -2,12 +2,15 @@ package me.kdv.noadsradio.presentation.ui.station
 
 import android.annotation.SuppressLint
 import android.content.ComponentName
+import android.graphics.ColorFilter
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
+import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
@@ -16,6 +19,12 @@ import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieDrawable
+import com.airbnb.lottie.LottieProperty
+import com.airbnb.lottie.SimpleColorFilter
+import com.airbnb.lottie.model.KeyPath
+import com.airbnb.lottie.value.LottieValueCallback
 import com.bumptech.glide.Glide
 import com.google.common.util.concurrent.MoreExecutors
 import dagger.hilt.android.AndroidEntryPoint
@@ -65,6 +74,16 @@ class MainActivity : AppCompatActivity() {
         initClickListeners()
 
         initObservers()
+
+        binding.musicPlayingAnimationView.repeatCount = LottieDrawable.INFINITE
+        binding.musicPlayingAnimationView.speed = 0.5F
+        binding.musicPlayingAnimationView.changeColor(R.color.colorAccent)
+        binding.musicPlayingAnimationView1.repeatCount = LottieDrawable.INFINITE
+        binding.musicPlayingAnimationView1.speed = 0.5F
+        binding.musicPlayingAnimationView1.changeColor(R.color.colorAccent)
+        binding.musicPlayingAnimationView2.repeatCount = LottieDrawable.INFINITE
+        binding.musicPlayingAnimationView2.speed = 0.5F
+        binding.musicPlayingAnimationView2.changeColor(R.color.colorAccent)
     }
 
     private fun initMediaPlayer() {
@@ -151,11 +170,15 @@ class MainActivity : AppCompatActivity() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val position = recyclerView.getCurrentPosition(dy)
+                try {
+                    val position = recyclerView.getCurrentPosition(dy)
 
-                currentStationList?.let {
-                    val station = it[position]
-                    viewModel.setIsCurrentStationGroup(station.groupId)
+                    currentStationList?.let {
+                        val station = it[position]
+                        viewModel.setIsCurrentStationGroup(station.groupId)
+                    }
+                } catch (e: Exception) {
+
                 }
             }
         })
@@ -219,6 +242,9 @@ class MainActivity : AppCompatActivity() {
                     binding.songTitleTextView.text = mediaMetadata.title
                     Glide.with(applicationContext).load(R.drawable.baseline_stop_48)
                         .into(binding.stationControlImageView)
+                    binding.musicPlayingAnimationView.playAnimation()
+                    binding.musicPlayingAnimationView1.playAnimation()
+                    binding.musicPlayingAnimationView2.playAnimation()
                 }
 
                 override fun onPlaybackStateChanged(playbackState: Int) {
@@ -304,5 +330,19 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         })
+    }
+
+    private fun LottieAnimationView.changeColor(
+        @ColorRes colorRes: Int
+    ) {
+        val color = ContextCompat.getColor(context, colorRes)
+        val filter = SimpleColorFilter(color)
+
+        arrayOf("Shape 1", "Pre-comp 2", "Trim Paths 1").forEach {
+            val keyPath = KeyPath(it, "**")
+            val callback: LottieValueCallback<ColorFilter> = LottieValueCallback(filter)
+
+            addValueCallback(keyPath, LottieProperty.COLOR_FILTER, callback)
+        }
     }
 }

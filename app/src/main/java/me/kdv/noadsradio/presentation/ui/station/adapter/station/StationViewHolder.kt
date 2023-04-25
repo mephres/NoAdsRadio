@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.imageview.ShapeableImageView
 import me.kdv.noadsradio.R
 
@@ -15,4 +16,5 @@ class StationViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val stationImageView = view.findViewById(R.id.stationImageView) as ShapeableImageView
     val stationControlImageView = view.findViewById(R.id.stationControlImageView) as ImageView
     val progressBar = view.findViewById(R.id.progressBar) as ProgressBar
+    val stationJingleAnimationView = view.findViewById(R.id.stationJingleAnimationView) as LottieAnimationView
 }
