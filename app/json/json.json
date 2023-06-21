@@ -89,8 +89,8 @@
         {
           "id": 12,
           "name": "Play Lounge",
-          "url": "",
-          "image": "",
+          "url": "https://fr1.streamhosting.ch/lounge128.mp3",
+          "image": "https://cdn.e-radio.gr/logos/gr/big/playlounge.png",
           "site": ""
         },
         {
@@ -324,6 +324,13 @@
           "url": "https://radio.kamchatkalive.ru:8103/dance",
           "image": "https://kamchatkalive.ru/img/dance.jpg",
           "site": "kamchatkalive.ru"
+        },
+        {
+          "id": 12,
+          "name": "Best Deep FM",
+          "url": "https://listen4.myradio24.com/5129",
+          "image": "https://top-radio.ru/assets/image/radio/180/best-deep-fm.jpg",
+          "site": ""
         }
       ]
     },
@@ -437,6 +444,13 @@
           "url": "https://str3.pcradio.ru/staroe_music-hi",
           "image": "https://top-radio.ru/assets/image/radio/180/staroe-radio.jpg",
           "site": "http://www.staroeradio.ru/"
+        },
+        {
+          "id": 16,
+          "name": "ABC Classic 2",
+          "url": "https://live-radio01.mediahubaustralia.com/FM2W/mp3/",
+          "image": "https://images.radiovolna.net/_files/images/stations/422206/2dfce45a1990bf1fa04f61cec4070f60.jpg",
+          "site": ""
         }
       ]
     },
