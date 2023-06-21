@@ -1,7 +1,7 @@
 package me.kdv.noadsradio.data.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.map
 import me.kdv.noadsradio.data.database.dao.StationDao
 import me.kdv.noadsradio.data.database.mapper.StationMapper
 import me.kdv.noadsradio.data.network.model.StationDto
@@ -31,7 +31,7 @@ class StationRepositoryImpl @Inject constructor(
     }
 
     override fun getStations(): LiveData<List<Station>> {
-        return Transformations.map(stationDao.getStations()) {
+        return stationDao.getStations().map {
             it.map {
                 stationMapper.mapDbToEntity(it)
             }
@@ -43,7 +43,7 @@ class StationRepositoryImpl @Inject constructor(
     }
 
     override fun getStationByUrl(url: String): LiveData<Station> {
-        return Transformations.map(stationDao.getStationById(url)) {
+        return stationDao.getStationById(url).map {
             stationMapper.mapDbToEntity(it)
         }
     }

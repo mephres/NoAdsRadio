@@ -1,7 +1,7 @@
 package me.kdv.noadsradio.data.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.map
 import kotlinx.coroutines.*
 import me.kdv.noadsradio.data.database.dao.StationGroupDao
 import me.kdv.noadsradio.data.database.mapper.StationGroupMapper
@@ -46,7 +46,7 @@ class StationGroupRepositoryImpl @Inject constructor(
     }
 
     override fun getStationGroups(): LiveData<List<StationGroup>> {
-        return Transformations.map(stationGroupDao.getGroups()) {
+        return stationGroupDao.getGroups().map {
             it.map {
                 stationGroupMapper.mapDbToEntity(it)
             }
