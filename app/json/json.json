@@ -211,6 +211,78 @@
           "no_jingle": false,
           "site": "https://www.lolliradio.net/soft",
           "url": "https://stream.lolliradio.net/lolli_soft.mp3"
+        },
+        {
+          "id": 29,
+          "image": "https://africanchillexperience.com/wp-content/uploads/2022/11/cropped-AFRICAN-CHILL-512.jpg",
+          "name": "African Chill Experience",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://giorgia.radiobellissima.it:8230/radio.mp3"
+        },
+        {
+          "id": 30,
+          "image": "https://i.scdn.co/image/ab67616d0000b273da00b799482cf8b420737e9f",
+          "name": "Airport Lounge",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://giorgia.radiobellissima.it:8240/radio.mp3"
+        },
+        {
+          "id": 31,
+          "image": "https://149370792.v2.pressablecdn.com/wp-content/uploads/2019/04/Castros-Lounge-2.jpg",
+          "name": "Toronto Lounge",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://centova.wlservices.org/proxy/pufepstm?mp=/stream"
+        },
+        {
+          "id": 32,
+          "image": "https://i.ytimg.com/vi/tKNah5vTdFs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCWmJ6HXN6sUqbotdRNnkHV9G5Oqg",
+          "name": "Relax America Stereo",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://radio.buenanube.net/radio/8070/radio.mp3"
+        },
+        {
+          "id": 33,
+          "image": "https://m.media-amazon.com/images/I/515Ptjep11L._UXNaN_FMjpg_QL85_.jpg",
+          "name": "Smooth Jazz Deluxe",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://mpc1.mediacp.eu:8356/stream"
+        },
+        {
+          "id": 34,
+          "image": "https://i.scdn.co/image/ab67616d0000b273eef214186d9595845b147205",
+          "name": "Sensual Lounge",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://maggie.torontocast.com:8028/stream"
+        },
+        {
+          "id": 35,
+          "image": "https://cdn-profiles.tunein.com/s53126/images/logog.jpg",
+          "name": "Illinois Street Lounge",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://ice2.somafm.com/illstreet-128-mp3"
+        },
+        {
+          "id": 36,
+          "image": "https://m.media-amazon.com/images/I/415zbqFV8fL.jpg",
+          "name": "Calm Pills Ambient",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://radio.upliftingpills.com:8000/radio.mp3"
+        },
+        {
+          "id": 37,
+          "image": "https://m.media-amazon.com/images/I/71fo3LgtvfS.png",
+          "name": "Chill Pills",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://radio.upliftingpills.com:8010/radio.mp3"
         }
       ]
     },
@@ -386,6 +458,20 @@
           "name": "Best Hits CoolFM",
           "site": "",
           "url": "https://mediagw.e-tiger.net/stream/zc11"
+        },
+        {
+          "id": 26,
+          "image": "https://radiopotok.ru/f/station/512/1767.png",
+          "name": "Лёгкое радио",
+          "site": "",
+          "url": "https://radio.slamfm.ru:8443/light"
+        },
+        {
+          "id": 27,
+          "image": "https://i.ytimg.com/vi/f0udCON328k/hqdefault.jpg",
+          "name": "Family Pop Dash",
+          "site": "",
+          "url": "https://ice55.securenetsystems.net/DASH94"
         }
       ]
     },
@@ -548,6 +634,27 @@
           "name": "Trance & Elektro CoolFM",
           "site": "",
           "url": "https://mediagw.e-tiger.net/stream/zc14"
+        },
+        {
+          "id": 23,
+          "image": "https://i.scdn.co/image/ab67706c0000da84eb6829bd6872c9b133fab20a",
+          "name": "ViBE EDM",
+          "site": "",
+          "url": "https://live.lofiradio.ru/vibe_mp3_320"
+        },
+        {
+          "id": 24,
+          "image": "https://rotterdamstyle.com/images/2023/02/01/The-history-of-Gabber-in-the-Netherlands-and-Rotterdam_large.jpg",
+          "name": "Rotterdam EDM",
+          "site": "",
+          "url": "https://www.radiostreamcast.com/listen/danceradiorotterdam/radio.mp3"
+        },
+        {
+          "id": 25,
+          "image": "https://yt3.googleusercontent.com/fJje1xyTkSgEx3mKx7itI1d-VaC-c2ZKfDzveaONgRELmv8r_NwVYWlF0u24dZJNGFvdmW-PjA=s900-c-k-c0x00ffffff-no-rj",
+          "name": "Beat Blender",
+          "site": "",
+          "url": "https://ice5.somafm.com/beatblender-128-mp3"
         }
       ]
     },
@@ -717,6 +824,62 @@
           "name": "90's Dance CoolFM",
           "site": "",
           "url": "https://mediagw.e-tiger.net/stream/zc06"
+        },
+        {
+          "id": 24,
+          "image": "https://www.getmeradio.com/stations/1001classiccollection-5178/logos/512x512.png",
+          "name": "1001 Classic Collection",
+          "site": "",
+          "url": "https://jenny.torontocast.com:8046/stream"
+        },
+        {
+          "id": 25,
+          "image": "https://www.radio.net/images/broadcasts/3d/ff/35858/1/c300.png",
+          "name": "Splash Classical",
+          "site": "",
+          "url": "https://ais-sa2.cdnstream1.com/2208_128.mp3"
+        },
+        {
+          "id": 26,
+          "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/ed/60/b1/ed60b1a5-723b-ec79-9754-13bb57d404d6/fd9f44fb-9d1f-4745-b156-72b4d1ffa83c_02.jpg/643x0w.jpg",
+          "name": "MC2 Unforgettable",
+          "site": "",
+          "url": "https://n11a-eu.rcs.revma.com/nt1qhvnp81uvv?rj-ttl=5&rj-tok=AAABi7LQaXMApFCMaOmvh9C1DA"
+        },
+        {
+          "id": 27,
+          "image": "https://i.ytimg.com/vi/s15J8PkwgWQ/maxresdefault.jpg",
+          "name": "Hits 70-80's",
+          "site": "",
+          "url": "https://everestcast.shoutcastservices.com:1485/stream"
+        },
+        {
+          "id": 28,
+          "image": "https://i.ytimg.com/vi/PHPt4RqJzac/hqdefault.jpg",
+          "name": "Café Romántico",
+          "site": "",
+          "url": "https://panel.retrolandigital.com/listen/cafe_romantico_radio/listen"
+        },
+        {
+          "id": 29,
+          "image": "https://i.ytimg.com/vi/EUrXWJIT-Fs/sddefault.jpg",
+          "name": "American Ink 1920-40's",
+          "site": "",
+          "url": "https://centova.amfm247.com:8448/stream"
+        },
+        {
+          "id": 30,
+          "image": "https://djkostas.gr/wp-content/uploads/2023/06/20230602_123146-scaled.jpg",
+          "name": "Love Moments",
+          "site": "",
+          "url": "https://strw1.openstream.co/2447?aw_0_1st.collectionid%3D6390%26stationId%3D6390%26publisherId%3D2471%26k%3D1699511694"
+        },
+        {
+          "id": 31,
+          "image": "https://www.radio.net/images/broadcasts/d9/0a/139373/1/c300.png",
+          "name": "70-80-90 Italia D’autore",
+          "site": "",
+          "url": "https://maggie.torontocast.com:8118/stream"
         }
       ]
     },
@@ -808,6 +971,27 @@
           "name": "Hard Rock & Metal",
           "site": "",
           "url": "https://cast2.my-control-panel.com/proxy/vladas/stream"
+        },
+        {
+          "id": 13,
+          "image": "https://media.bauerradio.com/image/upload/q_auto/v1681312578/shows/dauncylrcohmhattcri7.png",
+          "name": "MC2 Planet Rock",
+          "site": "",
+          "url": "https://n11a-eu.rcs.revma.com/w66qp4pp81uvv?rj-ttl=5&rj-tok=AAABi7LXdnkADEAKjwp8u7AQ2Q"
+        },
+        {
+          "id": 14,
+          "image": "https://i.ytimg.com/vi/Xt81eEVwiy0/maxresdefault.jpg",
+          "name": "Forgotten Rock",
+          "site": "",
+          "url": "https://usa4.fastcast4u.com/proxy/rstark1972?mp=%2F1"
+        },
+        {
+          "id": 15,
+          "image": "https://static.mytuner.mobi/media/tvos_radios/utqdjyrbzvp7.png",
+          "name": "Vibrazioni Rock",
+          "site": "",
+          "url": "https://maggie.torontocast.com:8036/stream"
         }
       ]
     },
@@ -1028,6 +1212,20 @@
           "name": "Michael Bolton",
           "site": "",
           "url": "https://streaming.exclusive.radio/er/bonjovihits/icecast.audio"
+        }
+      ]
+    },
+    {
+      "description": "Разное",
+      "id": 7,
+      "name": "Different",
+      "stations": [
+        {
+          "id": 1,
+          "image": "https://top-radio.ru/assets/image/radio/180/klassika-kinomuzyiki.png",
+          "name": "Орфей классика киномузыки",
+          "site": "",
+          "url": "https://channels.fonotron.ru:8000/Chan_9_192.mp3"
         }
       ]
     }
