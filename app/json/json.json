@@ -1,470 +1,1033 @@
 {
   "data": [
     {
+      "description": "Спокойное",
       "id": 1,
       "name": "Soft",
-      "description": "Спокойное",
       "stations": [
         {
           "id": 1,
-          "name": "Атмосфера",
-          "url": "https://listen5.myradio24.com/atmo",
           "image": "https://topradio.me/assets/image/radio/180/radio-atmosfera.png",
-          "site": "http://atmoradio.ru"
+          "name": "Атмосфера",
+          "site": "http://atmoradio.ru",
+          "url": "https://listen5.myradio24.com/atmo"
         },
         {
           "id": 2,
-          "name": "Instrumental Hits",
-          "url": "https://panel.retrolandigital.com:8130/listen",
           "image": "https://instrumentalhitsradio.com/assets/images/mini-copy-2-208x207-2.jpg",
-          "site": "https://instrumentalhitsradio.com"
+          "name": "Instrumental Hits",
+          "site": "https://instrumentalhitsradio.com",
+          "url": "https://panel.retrolandigital.com:8130/listen"
         },
         {
           "id": 3,
+          "image": "https://www.radio.net/images/broadcasts/24/a4/106798/2/c300.png",
           "name": "Sweet Melodies",
-          "url": "https://radio.sweetmelodies.tk:8000/stream1",
-          "image": "https://www.radio.net/images/broadcasts/24/a4/106798/2/c300.png"
+          "url": "https://radio.sweetmelodies.tk:8000/stream1"
         },
         {
           "id": 4,
+          "image": "https://seeded-session-images.scdn.co/v1/img/artist/4AW4T5gVQHW9tIM8w1o0GB/en",
           "name": "Slow Radio",
-          "url": "https://bluford.torontocast.com/proxy/wynekpwy/slowradio",
-          "image": "https://nl.slowradio.com/img/radio/players/slplayer.png",
-          "site": "https://www.slowradio.com"
+          "site": "https://www.slowradio.com",
+          "url": "https://bluford.torontocast.com/proxy/wynekpwy/slowradio"
         },
         {
           "id": 5,
-          "name": "Chillwave & Retrowave",
-          "url": "https://clubvid.xyz/level3",
-          "image": "http://retrowave.ru/img/share.png",
-          "site": "https://lounge.luxury",
-          "no_jingle": true
+          "image": "https://seeded-session-images.scdn.co/v1/img/artist/4AW4T5gVQHW9tIM8w1o0GB/en",
+          "name": "Slow Radio Gold",
+          "site": "https://www.slowradio.com",
+          "url": "hhttps://bluford.torontocast.com/proxy/ezefpkbu/slowradiogold"
         },
         {
           "id": 6,
-          "name": "Relax Live",
-          "url": "https://stream-31.zeno.fm/up0tg8z405quv",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbvlbatTJuQQhWURhZzoLBLruV_nyNBndLag&usqp=CAU",
-          "site": "",
-          "no_jingle": true
+          "image": "http://retrowave.ru/img/share.png",
+          "name": "Chillwave & Retrowave",
+          "no_jingle": true,
+          "site": "https://lounge.luxury",
+          "url": "https://clubvid.xyz/level3"
         },
         {
           "id": 7,
-          "name": "3 Music Harmony",
-          "url": "https://misato.ru-hoster.com:8057/stream",
-          "image": "https://www.radio.net/images/broadcasts/25/fa/38669/1/c300.png",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbvlbatTJuQQhWURhZzoLBLruV_nyNBndLag&usqp=CAU",
+          "name": "Relax Live",
+          "no_jingle": true,
           "site": "",
-          "no_jingle": true
+          "url": "https://stream-31.zeno.fm/up0tg8z405quv"
         },
         {
           "id": 8,
-          "name": "Relaxation Island",
-          "url": "https://www.liveradio.es/http://198.178.123.5:7932/stream",
-          "image": "http://relaxation-island.com/relax-island-new-top2.jpg",
-          "site": "http://relaxation-island.com/"
+          "image": "https://www.radio.net/images/broadcasts/25/fa/38669/1/c300.png",
+          "name": "3 Music Harmony",
+          "no_jingle": true,
+          "site": "",
+          "url": "https://misato.ru-hoster.com:8057/stream"
         },
         {
           "id": 9,
-          "name": "Ambient Sleeping Pill (ночь)",
-          "url": "https://radio.stereoscenic.com/asp-s",
-          "image": "https://pcradio.ru/images/stations/61b09c651936f.jpg",
-          "site": "https://ambientsleepingpill.com",
-          "no_jingle": true
+          "image": "http://relaxation-island.com/relax-island-new-top2.jpg",
+          "name": "Relaxation Island",
+          "site": "http://relaxation-island.com/",
+          "url": "https://www.liveradio.es/http://198.178.123.5:7932/stream"
         },
         {
           "id": 10,
-          "name": "a.m. Ambient (день)",
-          "url": "https://radio.stereoscenic.com/ama-s",
           "image": "https://pcradio.ru/images/stations/61b09c651936f.jpg",
-          "site": "https://amambient.com",
-          "no_jingle": true
+          "name": "Ambient Sleeping Pill (ночь)",
+          "no_jingle": true,
+          "site": "https://ambientsleepingpill.com",
+          "url": "https://radio.stereoscenic.com/asp-s"
         },
         {
           "id": 11,
-          "name": "Enigmatic Station",
-          "url": "https://listen2.myradio24.com/8226",
-          "image": "https://www.radio.net/images/broadcasts/fd/c5/39487/1/c300.png",
-          "site": "http://enigmatic.su"
+          "image": "https://pcradio.ru/images/stations/61b09c651936f.jpg",
+          "name": "a.m. Ambient (день)",
+          "no_jingle": true,
+          "site": "https://amambient.com",
+          "url": "https://radio.stereoscenic.com/ama-s"
         },
         {
           "id": 12,
-          "name": "Play Lounge",
-          "url": "https://fr1.streamhosting.ch/lounge128.mp3",
-          "image": "https://cdn.e-radio.gr/logos/gr/big/playlounge.png",
-          "site": ""
+          "image": "https://www.radio.net/images/broadcasts/fd/c5/39487/1/c300.png",
+          "name": "Enigmatic Station",
+          "site": "http://enigmatic.su",
+          "url": "https://listen2.myradio24.com/8226"
         },
         {
           "id": 13,
-          "name": "Lounge Radio",
-          "url": "https://fr1.streamhosting.ch/lounge128.mp3",
-          "image": "http://api.my-radios.com/images/thumb.php?countryCode=CH&name=23704-3893380.png&size=200",
-          "site": "https://lounge-radio.com"
+          "image": "https://cdn.e-radio.gr/logos/gr/big/playlounge.png",
+          "name": "Play Lounge",
+          "site": "",
+          "url": "https://fr1.streamhosting.ch/lounge128.mp3"
         },
         {
           "id": 14,
-          "name": "Chillout Crooze",
-          "url": "https://streaming.shoutcast.com/chillout-crooze-mp3",
-          "image": "https://www.radio.net/images/broadcasts/9a/29/108522/1/c300.png",
-          "site": "https://crooze.eu"
+          "image": "http://api.my-radios.com/images/thumb.php?countryCode=CH&name=23704-3893380.png&size=200",
+          "name": "Lounge Radio",
+          "site": "https://lounge-radio.com",
+          "url": "https://fr1.streamhosting.ch/lounge128.mp3"
         },
         {
           "id": 15,
-          "name": "Easy Crooze",
-          "url": "https://streaming.shoutcast.com/easy-crooze-mp3",
-          "image": "https://crooze.eu/wp-content/uploads/EASY-CROOZE-512x512px-1.png",
-          "site": "https://crooze.eu"
+          "image": "https://www.radio.net/images/broadcasts/9a/29/108522/1/c300.png",
+          "name": "Chillout Crooze",
+          "site": "https://crooze.eu",
+          "url": "https://streaming.shoutcast.com/chillout-crooze-mp3"
         },
         {
           "id": 16,
-          "name": "Luxury Lounge",
-          "url": "https://clubvid.xyz/level2",
-          "image": "https://eoouae45rgb.exactdn.com/2021/10/Luxury-Lounge-Radio%40660x550.jpg",
-          "site": "https://lounge.luxury"
+          "image": "https://crooze.eu/wp-content/uploads/EASY-CROOZE-512x512px-1.png",
+          "name": "Easy Crooze",
+          "site": "https://crooze.eu",
+          "url": "https://streaming.shoutcast.com/easy-crooze-mp3"
         },
         {
           "id": 17,
-          "name": "Звуки природы",
-          "url": "https://nature-rex.radioca.st/stream",
-          "image": "https://pcradio.ru/images/stations/62ea3eb8bb557.jpg",
-          "site": "http://www.ambinatureradio.com"
+          "image": "https://topradio.me/assets/image/radio/180/luxury-lounge-world.jpg",
+          "name": "Luxury Lounge",
+          "site": "https://lounge.luxury",
+          "url": "https://clubvid.xyz/level2"
         },
         {
           "id": 18,
-          "name": "kamchatkalive chillout",
-          "url": "https://radio.kamchatkalive.ru:8103/chillout",
+          "image": "https://pcradio.ru/images/stations/62ea3eb8bb557.jpg",
+          "name": "Звуки природы",
+          "site": "http://www.ambinatureradio.com",
+          "url": "https://nature-rex.radioca.st/stream"
+        },
+        {
+          "id": 19,
+          "image": "https://img.freepik.com/premium-vector/online-radio-icon-radio-station-vector-emblem_8071-14188.jpg?w=2000",
+          "name": "Звуки города",
+          "site": "",
+          "url": "https://strm.fvds.ru:8443/souci"
+        },
+        {
+          "id": 20,
           "image": "https://kamchatkalive.ru/img/chillout.jpg",
-          "site": "http://kamchatkalive.ru"
+          "name": "kamchatkalive chillout",
+          "site": "http://kamchatkalive.ru",
+          "url": "https://radio.kamchatkalive.ru:8103/chillout"
+        },
+        {
+          "id": 21,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDV1jpCi6qDADGFToa8O2hPGkWbUdKlSiSiSrGwMm_O77-HikMRaUyzR9kHx1TFBW-i-M&usqp=CAU",
+          "name": "Calm Classical",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/calmclassical/icecast.audio"
+        },
+        {
+          "id": 22,
+          "image": "https://i.ytimg.com/vi/oo6HWsjS-2c/maxresdefault.jpg",
+          "name": "Classical NightTime",
+          "no_jingle": true,
+          "site": "",
+          "url": "https://stream.epic-classical.com/classical-nighttime"
+        },
+        {
+          "id": 23,
+          "image": "https://m.media-amazon.com/images/I/51vJqpR1t0L._UXNaN_FMjpg_QL85_.jpg",
+          "name": "Classical Dinner",
+          "no_jingle": true,
+          "site": "",
+          "url": "https://stream.epic-classical.com/classical-dinner"
+        },
+        {
+          "id": 24,
+          "image": "https://upload.wikimedia.org/wikipedia/ru/0/0c/Lofi_Girl_logo.jpg",
+          "name": "LoFi Radio",
+          "no_jingle": true,
+          "site": "",
+          "url": "https://live.lofiradio.ru/lofi_mp3_320"
+        },
+        {
+          "id": 25,
+          "image": "https://www.radio.net/images/broadcasts/e1/c8/38722/1/c300.png",
+          "name": "CHILLout Radio",
+          "no_jingle": false,
+          "site": "https://chilloutradio.ru",
+          "url": "https://cast.chilloutradio.ru:8040/live"
+        },
+        {
+          "id": 26,
+          "image": "https://onlayn-radio.ru/uploads/posts/2022-01/74877_v5.png",
+          "name": "New Age Radio",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://a7.radioheart.ru:9044/newageradio"
+        },
+        {
+          "id": 27,
+          "image": "https://sg-res.9appsdownloading.com/sg/res/jpg/eb/d1/834c997c593f2c23bfdd59f89474-d65b.jpg?x-oss-process=style/mq200",
+          "name": "Радио Странствий",
+          "no_jingle": false,
+          "site": "",
+          "url": "https://listen2.myradio24.com/4156"
+        },
+        {
+          "id": 28,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTxGo_LZaMvj6f4yY7Dk5duXoHv6ukZf6KsBlEFqx4C8TZGIux9FvW4OBesbpyEbelk8Q&usqp=CAU",
+          "name": "Lolliradio Soft",
+          "no_jingle": false,
+          "site": "https://www.lolliradio.net/soft",
+          "url": "https://stream.lolliradio.net/lolli_soft.mp3"
         }
       ]
     },
     {
+      "description": "Поп",
       "id": 2,
       "name": "Pop",
-      "description": "Поп",
       "stations": [
         {
           "id": 1,
-          "name": "Star Radio Official",
-          "url": "https://streaming.radio.co/saf5721deb/listen",
           "image": "https://topradio.me/assets/image/radio/180/star-official.jpg",
-          "site": "http://www.star-radio.net"
+          "name": "Star Radio Official",
+          "site": "http://www.star-radio.net",
+          "url": "https://streaming.radio.co/saf5721deb/listen"
         },
         {
           "id": 2,
-          "name": "TNT Radio",
-          "url": "https://usa18.fastcast4u.com/proxy/tanderse2?mp=/1",
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmITvvdQWruHTjNKrabSLUAyrafSLq4XUeJhTPXwUUzgy9iUG-9TIi0meDHIysh9OFiCI&usqp=CAU",
-          "site": "http://www.shoutcast.com"
+          "name": "TNT Radio",
+          "site": "http://www.shoutcast.com",
+          "url": "https://usa18.fastcast4u.com/proxy/tanderse2?mp=/1"
         },
         {
           "id": 3,
-          "name": "Only Romantic",
-          "url": "https://only-romantic-radio.stream.laut.fm/only-romantic-radio",
           "image": "https://www.radio.net/images/broadcasts/a1/30/114236/1/c300.png",
-          "site": "http://laut.fm/only-romantic-radio"
+          "name": "Only Romantic",
+          "site": "http://laut.fm/only-romantic-radio",
+          "url": "https://only-romantic-radio.stream.laut.fm/only-romantic-radio"
         },
         {
           "id": 4,
+          "image": "http://api.my-radios.com/images/thumb.php?countryCode=FR&name=29133-8760552.png&size=200",
           "name": "Hit Radio Fr",
-          "url": "https://elder.radioca.st/stream",
-          "image": "http://api.my-radios.com/images/thumb.php?countryCode=FR&name=29133-8760552.png&size=200",
-          "site": ""
-        },
-        {
-          "id": 5,
-          "name": "Музыка Еврохит ТОП-40",
-          "url": "https://europaplus.hostingradio.ru:8014/ep-top256.mp3",
-          "image": "https://musictorrent.ru/uploads/posts/2023-02/1677094455_43fc780b77250cfeb6c2699aaa58e0bf.jpg",
-          "site": ""
-        },
-        {
-          "id": 6,
-          "name": "Новинки радио Европа плюс",
-          "url": "https://europaplus.hostingradio.ru:8014/ep-new128.mp3",
-          "image": "https://vo-radio.ru/images/logoweb1/evropa-plus-180.jpg",
-          "site": ""
-        },
-        {
-          "id": 7,
-          "name": "Play Radio | More Hits",
-          "url": "https://www.liveradio.es/https://stream.radiojar.com/d9cm273ystzuv",
-          "image": "https://admuzzum.xdevel.com/cloud/x/cid/35/im/png/XZXY/X/YQ/037b3fa2ba3da8fff6f5606a9de40299.png",
-          "site": "www.liveradio.es"
-        },
-        {
-          "id": 8,
-          "name": "Radio Five",
-          "url": "https://radiofive.ru:8443/radio",
-          "image": "https://www.radio.net/images/broadcasts/ac/45/3247/1/c300.png",
-          "site": "https://radiofive.ru"
-        },
-        {
-          "id": 9,
-          "name": "Радио русских песен",
-          "url": "https://listen.rusongs.ru/ru-mp3-128",
-          "image": "https://top-radio.ru/assets/image/radio/180/russong.png",
-          "site": "http://www.rusongs.ru"
-        },
-        {
-          "id": 10,
-          "name": "Радио Пассаж",
-          "url": "https://listen.radiopassazh.ru/aac-64",
-          "image": "https://top-radio.ru/assets/image/radio/180/passaj.jpg",
-          "site": "http://www.radiopassazh.ru"
-        },
-        {
-          "id": 11,
-          "name": "Radyo Pop",
-          "url": "https://www.liveradio.es/http://31.210.152.98/stream",
-          "image": "https://www.radio.de/images/broadcasts/ca/5b/121059/1/c300.png",
-          "site": "http://www.radyopop.com"
-        },
-        {
-          "id": 12,
-          "name": "Радио Ангелов",
-          "url": "https://listen6.myradio24.com/angels",
-          "image": "https://radiopotok.ru/f/station/512/1143.png",
-          "site": "https://AngelsRadio.ru"
-        },
-        {
-          "id": 13,
-          "name": "Виктори",
-          "url": "https://aska.ru-hoster.com:8092/stream",
-          "image": "https://top-radio.ru/assets/image/radio/180/radiovictoree.jpg",
-          "site": "http://victoree.ru"
-        },
-        {
-          "id": 14,
-          "name": "Play Radio",
-          "url": "https://stream.radiojar.com/0zs50dbr274tv",
-          "image": "https://admuzzum.xdevel.com/cloud/x/cid/35/im/png/XZXY/X/YQ/037b3fa2ba3da8fff6f5606a9de40299.png",
-          "site": ""
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Dance",
-      "description": "Dance",
-      "stations": [
-        {
-          "id": 1,
-          "name": "Relax Club (Deep House)",
-          "url": "https://r163-172-146-183.relay.radiotoolkit.com:30003/rcmdeep",
-          "image": "https://seeded-session-images.scdn.co/v1/img/artist/4A3bzcsz9J9Yq4PlIrLRmV/en",
           "site": "",
-          "no_jingle": true
-        },
-        {
-          "id": 2,
-          "name": "Generation Dance",
-          "url": "https://generationdance.lu/radio/8030/hd",
-          "image": "https://generation.dance/wp-content/uploads/2021/07/cropped-logo_etire.png",
-          "site": "https://generation.dance"
-        },
-        {
-          "id": 3,
-          "name": "Dance Wave",
-          "url": "http://stream.dancewave.online:8080/dance.mp3",
-          "image": "https://top-radio.ru/assets/image/radio/180/dance-wawe.png",
-          "site": ""
-        },
-        {
-          "id": 4,
-          "name": "Ural Sound FM | Deep",
-          "url": "https://www.liveradio.es/http://212.33.245.151:8000/uralsoundfm",
-          "image": "https://topradio.me/assets/image/radio/180/uralsoundfm.jpg",
-          "site": "https://vk.com/uralsoundfm"
+          "url": "https://elder.radioca.st/stream"
         },
         {
           "id": 5,
-          "name": "DJetRadio",
-          "url": "https://www.liveradio.es/http://djetradio.ru:8000/djetradio_128",
-          "image": "https://top-radio.ru/assets/image/radio/180/djet-radio.jpg",
-          "site": "http://djetradio.ru/"
+          "image": "https://musictorrent.ru/uploads/posts/2023-02/1677094455_43fc780b77250cfeb6c2699aaa58e0bf.jpg",
+          "name": "Музыка Еврохит ТОП-40",
+          "site": "",
+          "url": "https://europaplus.hostingradio.ru:8014/ep-top256.mp3"
         },
         {
           "id": 6,
-          "name": "Радио Play FM",
-          "url": "https://misato.ru-hoster.com:8052/playfm",
-          "image": "https://img.radios.com.br/radio/lg/radio134920_1579517328.jpg",
-          "site": "http://playfm.ucoz.ru/"
+          "image": "https://vo-radio.ru/images/logoweb1/evropa-plus-180.jpg",
+          "name": "Новинки радио Европа плюс",
+          "site": "",
+          "url": "https://europaplus.hostingradio.ru:8014/ep-new128.mp3"
         },
         {
           "id": 7,
-          "name": "RSTV Dance",
-          "url": "https://stream-42.zeno.fm/putwpru7568uv",
-          "image": "http://mnogoradio.ru/images/RSTV-dance.jpg",
-          "site": ""
+          "image": "https://cdn6.aptoide.com/imgs/d/4/7/d4772ccea406fe7d610c6364a69a2260_icon.png",
+          "name": "Play Radio | More Hits",
+          "site": "www.liveradio.es",
+          "url": "https://www.liveradio.es/https://stream.radiojar.com/d9cm273ystzuv"
         },
         {
           "id": 8,
-          "name": "Dance Radio",
-          "url": "https://26383.live.streamtheworld.com/SAM03AAC415_SC",
-          "image": "https://play-lh.googleusercontent.com/9uGeCDg5jiByz4h9Lg_2a3_swDJe1YPgQKx5K3sD-yqV8erXB9Y2V2NTyZRZw25yiw",
-          "site": "http://spacial.com"
+          "image": "https://www.radio.net/images/broadcasts/ac/45/3247/1/c300.png",
+          "name": "Radio Five",
+          "site": "https://radiofive.ru",
+          "url": "https://radiofive.ru:8443/radio"
         },
         {
           "id": 9,
-          "name": "Dance 98.5",
-          "url": "https://strw1.openstream.co/1238",
-          "image": "https://www.radio.net/images/broadcasts/a3/b3/143872/1/c300.png",
-          "site": "https://dance98.com"
+          "image": "https://top-radio.ru/assets/image/radio/180/russong.png",
+          "name": "Радио русских песен",
+          "site": "http://www.rusongs.ru",
+          "url": "https://listen.rusongs.ru/ru-mp3-128"
         },
         {
           "id": 10,
-          "name": "Play Mix",
-          "url": "https://cloud.playradio.one:8555/mix128.mp3",
-          "image": "https://cdn-profiles.tunein.com/s206064/images/logod.jpg?t=637236260380000000",
-          "site": "http://www.playradio.gr"
+          "image": "https://top-radio.ru/assets/image/radio/180/passaj.jpg",
+          "name": "Радио Пассаж",
+          "site": "http://www.radiopassazh.ru",
+          "url": "https://listen.radiopassazh.ru/aac-64"
         },
         {
           "id": 11,
-          "name": "kamchatkalive dance",
-          "url": "https://radio.kamchatkalive.ru:8103/dance",
-          "image": "https://kamchatkalive.ru/img/dance.jpg",
-          "site": "kamchatkalive.ru"
-        },
-        {
-          "id": 12,
-          "name": "Best Deep FM",
-          "url": "https://listen4.myradio24.com/5129",
-          "image": "https://top-radio.ru/assets/image/radio/180/best-deep-fm.jpg",
-          "site": ""
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Retro",
-      "description": "Ретро",
-      "stations": [
-        {
-          "id": 1,
-          "name": "Радио Классик",
-          "url": "https://jfm1.hostingradio.ru:14536/rcstream.mp3",
-          "image": "http://online-red.com/images/radio-logo/classicfm.png",
-          "site": "http://radioclassicfm.ru",
-          "no_jingle": true
-        },
-        {
-          "id": 2,
-          "name": "D. I. Classical Music",
-          "url": "https://rbx2.hnux.com/http://e12619.cloudrad.io:8978/;",
-          "image": "https://mediaprocessor.websimages.com/width/107/crop/0,0,107x107/imageprocessor.websimages.com/width/107/crop/0,0,107x107/www.di-radio.com/DI%20metal%20button%201.png",
-          "site": "http://www.digitalimpulse-radio.com/"
-        },
-        {
-          "id": 3,
-          "name": "Советские песни",
-          "url": "https://sovetskie-pesni.ru:8005/stream",
-          "image": "https://online-red.com/images/radio-logo/sovetskie-pesni.png",
-          "site": "https://sovetskie-pesni.ru"
-        },
-        {
-          "id": 4,
-          "name": "Love Times",
-          "url": "https://c15.radioboss.fm:18152/stream",
-          "image": "https://www.radiolovetimes.com/wp-content/uploads/2022/10/radio-lovetimes-icon.png",
-          "site": "http://www.radiolovetimes.com"
-        },
-        {
-          "id": 5,
-          "name": "Hit Radio Fr 80-90's",
-          "url": "https://www.liveradio.es/http://nebula.shoutca.st:8616/;stream.mp3",
-          "image": "http://api.my-radios.com/images/thumb.php?countryCode=FR&name=29133-8760552.png&size=200",
-          "site": ""
-        },
-        {
-          "id": 6,
-          "name": "Play Gold Radio",
-          "url": "https://stream.radiojar.com/431m8b6qcm5tv",
-          "image": "https://cdn.e-radio.gr/logos/gr/500/playgold.png",
-          "site": ""
-        },
-        {
-          "id": 7,
-          "name": "D. I. Dance 90's",
-          "url": "https://rbx2.hnux.com/http://e12286.cloudrad.io:8643/;",
-          "image": "https://mediaprocessor.websimages.com/width/107/crop/0,0,107x107/imageprocessor.websimages.com/width/107/crop/0,0,107x107/www.di-radio.com/DI%20metal%20button%201.png",
-          "site": "http://www.di-radio.com/"
-        },
-        {
-          "id": 8,
-          "name": "Radio 80s Planet",
-          "url": "https://str3.openstream.co/560",
-          "image": "https://cdn-profiles.tunein.com/s310207/images/logog.jpg?t=1",
-          "site": "http://80splanet.com"
-        },
-        {
-          "id": 9,
-          "name": "Dance Wave Retro",
-          "url": "http://stream2.dancewave.online:8080/retrodance.ogg",
-          "image": "https://radio-muzyka.ru/img/48.jpg",
-          "site": "https://retro.dacemwave.online"
-        },
-        {
-          "id": 10,
-          "name": "Radio SC",
-          "url": "https://www.liveradio.es/http://akl.sytes.net:8000/sc.mp3",
-          "image": "",
-          "site": ""
-        },
-        {
-          "id": 11,
-          "name": "True Colors Radio",
-          "url": "https://listen7.myradio24.com/45329",
-          "image": "https://top-radio.ru/assets/image/radio/180/true-colors-radio.jpg",
-          "site": "https://truecolorsradio.ru"
-        },
-        {
-          "id": 12,
-          "name": "Радио 7 - Настроение счастья",
-          "url": "https://radio7.hostingradio.ru:8040/radio7_happiness64.aacp",
-          "image": "https://top-radio.ru/assets/image/radio/180/7-Na-semi-xolmax.png",
-          "site": ""
+          "image": "https://www.radio.de/images/broadcasts/ca/5b/121059/1/c300.png",
+          "name": "Radyo Pop",
+          "site": "http://www.radyopop.com",
+          "url": "https://www.liveradio.es/http://31.210.152.98/stream"
         },
         {
           "id": 13,
-          "name": "Радио 7 - Настроение любить",
-          "url": "https://radio7.hostingradio.ru:8040/radio7_love64.aacp",
-          "image": "https://top-radio.ru/assets/image/radio/180/r7-love.png",
-          "site": ""
+          "image": "https://top-radio.ru/assets/image/radio/180/radiovictoree.jpg",
+          "name": "Виктори",
+          "site": "http://victoree.ru",
+          "url": "https://aska.ru-hoster.com:8092/stream"
         },
         {
           "id": 14,
-          "name": "Радио 7 - Наедине с музыкой",
-          "url": "https://radio7.hostingradio.ru:8040/radio7_alone64.aacp",
-          "image": "https://top-radio.ru/assets/image/radio/180/r7-alone.png",
-          "site": ""
+          "image": "https://cdn6.aptoide.com/imgs/d/4/7/d4772ccea406fe7d610c6364a69a2260_icon.png",
+          "name": "Play Radio",
+          "site": "",
+          "url": "https://stream.radiojar.com/0zs50dbr274tv"
         },
         {
           "id": 15,
-          "name": "Музыка старого радио",
-          "url": "https://str3.pcradio.ru/staroe_music-hi",
-          "image": "https://top-radio.ru/assets/image/radio/180/staroe-radio.jpg",
-          "site": "http://www.staroeradio.ru/"
+          "image": "https://www.radioboomerang.com/wp-content/uploads/2021/10/logo-boom-402.png",
+          "name": "Boomerang 2020's",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/boomerang2020s/icecast.audio"
         },
         {
           "id": 16,
-          "name": "ABC Classic 2",
-          "url": "https://live-radio01.mediahubaustralia.com/FM2W/mp3/",
-          "image": "https://images.radiovolna.net/_files/images/stations/422206/2dfce45a1990bf1fa04f61cec4070f60.jpg",
-          "site": ""
+          "image": "https://www.radioboomerang.com/wp-content/uploads/2021/10/logo-boom-402.png",
+          "name": "Boomerang 2010's",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/boomerang2010s/icecast.audio"
+        },
+        {
+          "id": 17,
+          "image": "https://www.radioboomerang.com/wp-content/uploads/2021/10/logo-boom-402.png",
+          "name": "Boomerang 2000's",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/boomerang2000s/icecast.audio"
+        },
+        {
+          "id": 18,
+          "image": "https://www.radio.net/images/broadcasts/87/74/110011/3/c300.png",
+          "name": "Positively Gold",
+          "site": "",
+          "url": "https://streaming.positivity.radio/pr/posigold/icecast.audio"
+        },
+        {
+          "id": 19,
+          "image": "https://i1.sndcdn.com/avatars-ZGJMszGECcVNulX8-eyPPDA-t240x240.jpg",
+          "name": "Drive Radio",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/moodhappy/icecast.audio"
+        },
+        {
+          "id": 20,
+          "image": "https://i.ytimg.com/vi/5u-tYqRQSsE/maxresdefault.jpg",
+          "name": "Pop Workout",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/sportifypop/icecast.audio"
+        },
+        {
+          "id": 21,
+          "image": "https://www.auraclesound.co.uk/wp-content/uploads/2022/09/R-1051001-1655452497-3574.jpg",
+          "name": "Hot Hits",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/chart/icecast.audio"
+        },
+        {
+          "id": 22,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "Soul & Funky CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc25"
+        },
+        {
+          "id": 23,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "2010's CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc02"
+        },
+        {
+          "id": 24,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "2000's CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc03"
+        },
+        {
+          "id": 25,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "Best Hits CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc11"
         }
       ]
     },
     {
-      "id": 5,
-      "name": "Rock",
-      "description": "Рок",
+      "description": "Dance",
+      "id": 3,
+      "name": "Dance",
       "stations": [
         {
           "id": 1,
-          "name": "kamchatkalive rock",
-          "url": "https://radio.kamchatkalive.ru:8103/rock",
+          "image": "https://seeded-session-images.scdn.co/v1/img/artist/4A3bzcsz9J9Yq4PlIrLRmV/en",
+          "name": "Relax Club (Deep House)",
+          "no_jingle": true,
+          "site": "",
+          "url": "https://r163-172-146-183.relay.radiotoolkit.com:30003/rcmdeep"
+        },
+        {
+          "id": 2,
+          "image": "https://generation.dance/wp-content/uploads/2021/07/cropped-logo_etire.png",
+          "name": "Generation Dance",
+          "site": "https://generation.dance",
+          "url": "https://generationdance.lu/radio/8030/hd"
+        },
+        {
+          "id": 3,
+          "image": "https://top-radio.ru/assets/image/radio/180/dance-wawe.png",
+          "name": "Dance Wave",
+          "site": "",
+          "url": "http://stream.dancewave.online:8080/dance.mp3"
+        },
+        {
+          "id": 4,
+          "image": "https://topradio.me/assets/image/radio/180/uralsoundfm.jpg",
+          "name": "Ural Sound FM | Deep",
+          "site": "https://vk.com/uralsoundfm",
+          "url": "https://www.liveradio.es/http://212.33.245.151:8000/uralsoundfm"
+        },
+        {
+          "id": 5,
+          "image": "https://top-radio.ru/assets/image/radio/180/djet-radio.jpg",
+          "name": "DJetRadio",
+          "site": "http://djetradio.ru/",
+          "url": "https://www.liveradio.es/http://djetradio.ru:8000/djetradio_128"
+        },
+        {
+          "id": 6,
+          "image": "https://img.radios.com.br/radio/lg/radio134920_1579517328.jpg",
+          "name": "Радио Play FM",
+          "site": "http://playfm.ucoz.ru/",
+          "url": "https://misato.ru-hoster.com:8052/playfm"
+        },
+        {
+          "id": 7,
+          "image": "http://mnogoradio.ru/images/RSTV-dance.jpg",
+          "name": "RSTV Dance",
+          "site": "",
+          "url": "https://stream-42.zeno.fm/putwpru7568uv"
+        },
+        {
+          "id": 8,
+          "image": "https://play-lh.googleusercontent.com/9uGeCDg5jiByz4h9Lg_2a3_swDJe1YPgQKx5K3sD-yqV8erXB9Y2V2NTyZRZw25yiw",
+          "name": "Dance Radio",
+          "site": "http://spacial.com",
+          "url": "https://26383.live.streamtheworld.com/SAM03AAC415_SC"
+        },
+        {
+          "id": 9,
+          "image": "https://www.radio.net/images/broadcasts/a3/b3/143872/1/c300.png",
+          "name": "Dance 98.5",
+          "site": "https://dance98.com",
+          "url": "https://strw1.openstream.co/1238"
+        },
+        {
+          "id": 10,
+          "image": "https://cdn-profiles.tunein.com/s206064/images/logod.jpg?t=637236260380000000",
+          "name": "Play Mix",
+          "site": "http://www.playradio.gr",
+          "url": "https://cloud.playradio.one:8555/mix128.mp3"
+        },
+        {
+          "id": 11,
+          "image": "https://kamchatkalive.ru/img/dance.jpg",
+          "name": "kamchatkalive dance",
+          "site": "kamchatkalive.ru",
+          "url": "https://radio.kamchatkalive.ru:8103/dance"
+        },
+        {
+          "id": 12,
+          "image": "https://top-radio.ru/assets/image/radio/180/best-deep-fm.jpg",
+          "name": "Best Deep FM",
+          "site": "",
+          "url": "https://listen4.myradio24.com/5129"
+        },
+        {
+          "id": 13,
+          "image": "https://i.ytimg.com/vi/DsAd2Brhr-M/hqdefault.jpg",
+          "name": "Deep House Mix",
+          "site": "",
+          "url": "https://listen3.myradio24.com/oldclub"
+        },
+        {
+          "id": 14,
+          "image": "https://i.ytimg.com/vi/D4G0RWeZ2gA/maxresdefault.jpg",
+          "name": "Modern Dance",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/hfmoderndance/icecast.audio"
+        },
+        {
+          "id": 15,
+          "image": "https://media1.popsugar-assets.com/files/thumbor/M_PV14_8TL2LKWBSM-qqVKI32AI=/fit-in/792x792/filters:format_auto():upscale()/2016/12/02/044/n/1922729/af82077e0f14b20c_Cardio-Dance-Bootcamp-Workout-Video.jpg",
+          "name": "Dance Workout",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/sportifydance/icecast.audio"
+        },
+        {
+          "id": 16,
+          "image": "https://www.health.com/thmb/G_A2kxIu-4SSFjgYQ-i6w3vjDGE=/2000x0/filters:no_upscale():max_bytes(150000):strip_icc()/exercise-fitness-aerobics-GettyImages-670724074-ec0388f7bd444acbb2888f280be98c9d.jpg",
+          "name": "Aerobics Workout",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/sportifyaerobics/icecast.audio"
+        },
+        {
+          "id": 17,
+          "image": "https://i.ytimg.com/vi/7AUq5qmdqI0/maxresdefault.jpg",
+          "name": "Trending Workout",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/sportifytrending/icecast.audio"
+        },
+        {
+          "id": 18,
+          "image": "https://m.media-amazon.com/images/I/61AjUrFrlIL._UXNaN_FMjpg_QL85_.jpg",
+          "name": "Ibiza Dance",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/ibiza/icecast.audio"
+        },
+        {
+          "id": 19,
+          "image": "https://i.scdn.co/image/ab67706f000000020f08f9492b44921362748b24",
+          "name": "Dance Chill",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/chilldance/icecast.audio"
+        },
+        {
+          "id": 20,
+          "image": "https://cdn-profiles.tunein.com/s142080/images/logod.png?t=638306497020000000",
+          "name": "EDM Megashuffle",
+          "site": "",
+          "url": "https://maggie.torontocast.com:9030/stream"
+        },
+        {
+          "id": 21,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "Dance 2000's CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc04"
+        },
+        {
+          "id": 22,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "Trance & Elektro CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc14"
+        }
+      ]
+    },
+    {
+      "description": "Ретро",
+      "id": 4,
+      "name": "Retro",
+      "stations": [
+        {
+          "id": 1,
+          "image": "http://online-red.com/images/radio-logo/classicfm.png",
+          "name": "Радио Классик",
+          "no_jingle": true,
+          "site": "http://radioclassicfm.ru",
+          "url": "https://jfm1.hostingradio.ru:14536/rcstream.mp3"
+        },
+        {
+          "id": 2,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Mt7U-ADkfLbWzZGyfU6WSscGM3yart30pQ&usqp=CAU",
+          "name": "D. I. Classical Music",
+          "site": "http://www.digitalimpulse-radio.com/",
+          "url": "https://rbx2.hnux.com/http://e12619.cloudrad.io:8978/;"
+        },
+        {
+          "id": 3,
+          "image": "https://online-red.com/images/radio-logo/sovetskie-pesni.png",
+          "name": "Советские песни",
+          "site": "https://sovetskie-pesni.ru",
+          "url": "https://sovetskie-pesni.ru:8005/stream"
+        },
+        {
+          "id": 4,
+          "image": "https://seeklogo.com/images/L/love-radio-tomsk-95-7-fm-logo-8BCC2AC8CD-seeklogo.com.png",
+          "name": "Love Times",
+          "site": "http://www.radiolovetimes.com",
+          "url": "https://c15.radioboss.fm:18152/stream"
+        },
+        {
+          "id": 5,
+          "image": "http://api.my-radios.com/images/thumb.php?countryCode=FR&name=29133-8760552.png&size=200",
+          "name": "Hit Radio Fr 80-90's",
+          "site": "",
+          "url": "https://www.liveradio.es/http://nebula.shoutca.st:8616/;stream.mp3"
+        },
+        {
+          "id": 6,
+          "image": "https://cdn.e-radio.gr/logos/gr/500/playgold.png",
+          "name": "Play Gold Radio",
+          "site": "",
+          "url": "https://stream.radiojar.com/431m8b6qcm5tv"
+        },
+        {
+          "id": 7,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Mt7U-ADkfLbWzZGyfU6WSscGM3yart30pQ&usqp=CAU",
+          "name": "D. I. Dance 90's",
+          "site": "http://www.di-radio.com/",
+          "url": "https://rbx2.hnux.com/http://e12286.cloudrad.io:8643/;"
+        },
+        {
+          "id": 8,
+          "image": "https://cdn-profiles.tunein.com/s310207/images/logog.jpg?t=1",
+          "name": "Radio 80s Planet",
+          "site": "http://80splanet.com",
+          "url": "https://str3.openstream.co/560"
+        },
+        {
+          "id": 9,
+          "image": "https://radio-muzyka.ru/img/48.jpg",
+          "name": "Dance Wave Retro",
+          "site": "https://retro.dacemwave.online",
+          "url": "http://stream2.dancewave.online:8080/retrodance.ogg"
+        },
+        {
+          "id": 10,
+          "image": "https://www.radio.de/images/broadcasts/f9/9c/144791/1/c300.png",
+          "name": "Radio SC",
+          "site": "",
+          "url": "https://www.liveradio.es/http://akl.sytes.net:8000/sc.mp3"
+        },
+        {
+          "id": 11,
+          "image": "https://top-radio.ru/assets/image/radio/180/true-colors-radio.jpg",
+          "name": "True Colors Radio",
+          "site": "https://truecolorsradio.ru",
+          "url": "https://listen7.myradio24.com/45329"
+        },
+        {
+          "id": 12,
+          "image": "https://top-radio.ru/assets/image/radio/180/7-Na-semi-xolmax.png",
+          "name": "Радио 7 - Настроение счастья",
+          "site": "",
+          "url": "https://radio7.hostingradio.ru:8040/radio7_happiness64.aacp"
+        },
+        {
+          "id": 13,
+          "image": "https://top-radio.ru/assets/image/radio/180/r7-love.png",
+          "name": "Радио 7 - Настроение любить",
+          "site": "",
+          "url": "https://radio7.hostingradio.ru:8040/radio7_love64.aacp"
+        },
+        {
+          "id": 14,
+          "image": "https://top-radio.ru/assets/image/radio/180/r7-alone.png",
+          "name": "Радио 7 - Наедине с музыкой",
+          "site": "",
+          "url": "https://radio7.hostingradio.ru:8040/radio7_alone64.aacp"
+        },
+        {
+          "id": 15,
+          "image": "https://top-radio.ru/assets/image/radio/180/staroe-radio.jpg",
+          "name": "Музыка старого радио",
+          "site": "http://www.staroeradio.ru/",
+          "url": "https://str3.pcradio.ru/staroe_music-hi"
+        },
+        {
+          "id": 16,
+          "image": "https://images.radiovolna.net/_files/images/stations/422206/2dfce45a1990bf1fa04f61cec4070f60.jpg",
+          "name": "ABC Classic 2",
+          "site": "",
+          "url": "https://live-radio01.mediahubaustralia.com/FM2W/mp3/"
+        },
+        {
+          "id": 17,
+          "image": "https://seeklogo.com/images/L/love-radio-tomsk-95-7-fm-logo-8BCC2AC8CD-seeklogo.com.png",
+          "name": "Love Mix",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/lrlovemix/icecast.audio"
+        },
+        {
+          "id": 18,
+          "image": "https://static.mytuner.mobi/media/tvos_radios/ChQMuNrjTv.png",
+          "name": "Fisherton Classic",
+          "site": "",
+          "url": "https://media425.digitar.net:8081/fishertonclassic.mp3"
+        },
+        {
+          "id": 19,
+          "image": "https://www.radioboomerang.com/wp-content/uploads/2021/10/logo-boom-402.png",
+          "name": "Boomerang 1990's",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/boomerang1990s/icecast.audio"
+        },
+        {
+          "id": 20,
+          "image": "https://www.radioboomerang.com/wp-content/uploads/2021/10/logo-boom-402.png",
+          "name": "Boomerang 1980's",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/boomerang1980s/icecast.audio"
+        },
+        {
+          "id": 21,
+          "image": "https://previews.123rf.com/images/fokaspokas/fokaspokas1808/fokaspokas180802452/106909212-radio-tower-icon.-linear-style.-orange-neon-style-on-black-background.-light-icon.jpg",
+          "name": "Light Radio",
+          "site": "",
+          "url": "https://lightradio.radiostream.pro/mp3"
+        },
+        {
+          "id": 22,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "90's CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc05"
+        },
+        {
+          "id": 23,
+          "image": "https://play-lh.googleusercontent.com/rcLWw_U6KsfdhzbLPXDQmHgUOyCPDTalLQIsy36WbhioZ6mJowXAFiPE8yHOyUDgeME",
+          "name": "90's Dance CoolFM",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc06"
+        }
+      ]
+    },
+    {
+      "description": "Рок",
+      "id": 5,
+      "name": "Rock",
+      "stations": [
+        {
+          "id": 1,
           "image": "https://kamchatkalive.ru/img/rock.jpg",
-          "site": "http://kamchatkalive.ru"
+          "name": "kamchatkalive rock",
+          "site": "http://kamchatkalive.ru",
+          "url": "https://radio.kamchatkalive.ru:8103/rock"
+        },
+        {
+          "id": 2,
+          "image": "https://radiopotok.ru/f/station/512/1143.png",
+          "name": "Радио Ангелов",
+          "site": "https://AngelsRadio.ru",
+          "url": "https://listen6.myradio24.com/angels"
+        },
+        {
+          "id": 3,
+          "image": "https://thumbs.dreamstime.com/b/rock-heavy-metal-hard-music-hand-symbol-vector-icon-178433734.jpg",
+          "name": "Sportify Rock",
+          "site": "",
+          "url": "https://drive.uber.radio/uber/sportifyrock/icecast.audio"
+        },
+        {
+          "id": 4,
+          "image": "https://images.vexels.com/media/users/3/183439/isolated/preview/604ce7115f4d07cc34b4db0ed790672b-electric-guitar-alternative-rock-symbol-black.png",
+          "name": "Alternative Rock",
+          "site": "",
+          "url": "https://maggie.torontocast.com:9028/stream"
+        },
+        {
+          "id": 5,
+          "image": "https://i.scdn.co/image/ab67616d0000b273edbe33c5bccdd79ca04afa7d",
+          "name": "AlexFM",
+          "site": "",
+          "url": "https://alexfm.stream.laut.fm/alexfm"
+        },
+        {
+          "id": 6,
+          "image": "https://cdn.iconscout.com/icon/premium/png-256-thumb/pirate-cute-2752502-2285449.png",
+          "name": "Пиратское рок",
+          "site": "",
+          "url": "https://live.rock-wawe.ru:8001/RockWawe"
+        },
+        {
+          "id": 7,
+          "image": "https://motoradio.online/assets/img/logo.png",
+          "name": "Rock MotoRadio",
+          "site": "",
+          "url": "https://stream.motoradio.online/lite-mp3"
+        },
+        {
+          "id": 8,
+          "image": "https://coolfm.hu/radio/wp-content/uploads/2021/11/play-COOL-FM-ROCK.png",
+          "name": "Classic Rock CoolFm",
+          "site": "",
+          "url": "https://mediagw.e-tiger.net/stream/zc10"
+        },
+        {
+          "id": 9,
+          "image": "https://hellomusictheory.com/wp-content/uploads/2023/04/best-rock-ballads-of-all-time.png",
+          "name": "Best Rock Ballads",
+          "site": "",
+          "url": "https://stream.nextmedia.si/proxy/rocks_1?mp=/stream;"
+        },
+        {
+          "id": 10,
+          "image": "https://thumbs.dreamstime.com/z/rock-heavy-metal-hard-rock-music-hand-symbol-rock-heavy-metal-hard-rock-music-skeleton-hand-symbol-vector-icon-178434649.jpg",
+          "name": "Hard & Heavy Rock",
+          "site": "",
+          "url": "https://stream.nextmedia.si/proxy/rocks_2?mp=/stream;"
+        },
+        {
+          "id": 11,
+          "image": "https://e7.pngegg.com/pngimages/903/93/png-clipart-classic-rock-led-zeppelin-progressive-rock-classic-rock-text-logo.png",
+          "name": "Rock Classics",
+          "site": "",
+          "url": "https://stream.nextmedia.si/proxy/rocks_3?mp=/stream;"
+        },
+        {
+          "id": 12,
+          "image": "https://siachenstudios.com/wp-content/uploads/2023/05/def-leppard.jpg.webp",
+          "name": "Hard Rock & Metal",
+          "site": "",
+          "url": "https://cast2.my-control-panel.com/proxy/vladas/stream"
+        }
+      ]
+    },
+    {
+      "description": "Исполнители",
+      "id": 6,
+      "name": "Singers",
+      "stations": [
+        {
+          "id": 1,
+          "image": "https://m.media-amazon.com/images/I/41Wh8tamXcL._AC_UF894,1000_QL80_.jpg",
+          "name": "Elvis Presley",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/elvispresleyhits/icecast.audio"
+        },{
+          "id": 2,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Frank_Sinatra_%281957_studio_portrait_close-up%29.jpg/800px-Frank_Sinatra_%281957_studio_portrait_close-up%29.jpg",
+          "name": "Frank Sinatra",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/franksinatrahits/icecast.audio"
+        },{
+          "id": 3,
+          "image": "https://i.pinimg.com/736x/6a/fd/14/6afd14e89434e452d319fd6321addb81.jpg",
+          "name": "The Beatles",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/thebeatleshits/icecast.audio"
+        },{
+          "id": 4,
+          "image": "https://i.pinimg.com/originals/4e/b8/27/4eb827bcba03c3ef511edb3cd72dd6f2.jpg",
+          "name": "ABBA",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/abbahits/icecast.audio"
+        },{
+          "id": 5,
+          "image": "https://i2-prod.walesonline.co.uk/incoming/article17393792.ece/ALTERNATES/s1200b/0_rsJPG.jpg",
+          "name": "Roxette",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/roxettehits/icecast.audio"
+        },{
+          "id": 6,
+          "image": "https://i.pinimg.com/736x/b4/c5/a3/b4c5a31441bfb52725127b1b36b23be3.jpg",
+          "name": "Michael Jackson",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/michaeljacksonhits/icecast.audio"
+        },{
+          "id": 7,
+          "image": "https://upload.wikimedia.org/wikipedia/en/2/28/Icon_queen_albumcover.jpg",
+          "name": "Queen",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/queenhits/icecast.audio"
+        },{
+          "id": 8,
+          "image": "https://i.pinimg.com/736x/bf/c7/9c/bfc79c823384a9d4a352d30134b18414.jpg",
+          "name": "Pet Shop Boys",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/petshopboyshits/icecast.audio"
+        },
+        {
+          "id": 9,
+          "image": "https://olorisupergal.com/wp-content/uploads/celine-dion.jpg",
+          "name": "Celine Dion",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/celinedion/icecast.audio"
+        },
+        {
+          "id": 10,
+          "image": "https://static.independent.co.uk/2021/03/25/16/newFile-9.jpg",
+          "name": "Tina Turner",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/tinaturnerhits/icecast.audio"
+        },{
+          "id": 11,
+          "image": "https://i.pinimg.com/474x/fc/96/79/fc967970681631310b1ae5821c9f4e3f.jpg",
+          "name": "Aerosmith",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/aerosmithhits/icecast.audio"
+        },{
+          "id": 12,
+          "image": "https://slutever.com/wp-content/uploads/britney-spears-young-britney-young-628858491-e1535231662263.jpg",
+          "name": "Britney Spears",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/britneyspearshits/icecast.audio"
+        },{
+          "id": 13,
+          "image": "https://www.sheknows.com/wp-content/uploads/2023/03/avril-lavigne.jpg?w=1024",
+          "name": "Avril Lavigne",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/avrillavigne/icecast.audio"
+        },{
+          "id": 14,
+          "image": "https://play-lh.googleusercontent.com/wW9_gyjVgo9ck1sBUS8vjMjHY0w0QEYH7FBF8e_WQ6A8TP6BKcP227tJ2jPBMEE86Os=w240-h480-rw",
+          "name": "Ed Sheeran",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/edsheeranhits/icecast.audio"
+        },{
+          "id": 15,
+          "image": "https://i2-prod.mirror.co.uk/incoming/article2269664.ece/ALTERNATES/s1200c/Elton-John.jpg",
+          "name": "Elton John",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/eltonjohnhits/icecast.audio"
+        },{
+          "id": 16,
+          "image": "https://res.cloudinary.com/teepublic/image/private/s--fLX0uK-x--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_000000,e_outline:48/co_000000,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/t_watermark_lock/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1622683770/production/designs/22284873_0.jpg",
+          "name": "George Michael",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/georgemichaelhits/icecast.audio"
+        },{
+          "id": 17,
+          "image": "https://cdn.smehost.net/sonymusicca-caprod/wp-content/uploads/2020/10/Enrique-Iglesias.jpg",
+          "name": "Enrique Iglesias",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/enriqueiglesias/icecast.audio"
+        },{
+          "id": 18,
+          "image": "https://64.media.tumblr.com/2a68c470b157973eee985939ed76ede0/d0f6199025e84988-d0/s1280x1920/7279059b61ed3e97bd18e25cf2bb040ff733fdee.jpg",
+          "name": "Katy Perry",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/katyperry/icecast.audio"
+        },{
+          "id": 19,
+          "image": "https://m.media-amazon.com/images/I/61VXKDfaZsL._UF1000,1000_QL80_.jpg",
+          "name": "Kenny G",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/kennyg/icecast.audio"
+        },{
+          "id": 20,
+          "image": "https://m.media-amazon.com/images/I/61r59sgEIpL._UF1000,1000_QL80_.jpg",
+          "name": "Lionel Richie",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/lionelrichiehits/icecast.audio"
+        },{
+          "id": 21,
+          "image": "https://people.com/thmb/KiI9Rx5y-91DpyZptszvOxPhuZI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2)/gettyimages-1146361849-2000-cd3916bddc504d74b6f362743089ae8c.jpg",
+          "name": "Mariah Carey",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/mariahcareyhits/icecast.audio"
+        },{
+          "id": 22,
+          "image": "https://i.pinimg.com/originals/03/35/f8/0335f841a01d361c85664c224295d4a1.jpg",
+          "name": "Sia",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/sia/icecast.audio"
+        },{
+          "id": 23,
+          "image": "https://www.usatoday.com/gcdn/presto/2021/11/16/USAT/76dfc6b7-e1b0-44f6-ba86-5e79ad035ce8-118091_0058bc_1.jpg",
+          "name": "Adele",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/adelehits/icecast.audio"
+        },{
+          "id": 25,
+          "image": "https://e1.pxfuel.com/desktop-wallpaper/883/514/desktop-wallpaper-best-music-scorpions-774518-music-scorpions-band-logo-thumbnail.jpg",
+          "name": "Scorpions",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/scorpions/icecast.audio"
+        },{
+          "id": 26,
+          "image": "https://i2-prod.mirror.co.uk/incoming/article21161963.ece/ALTERNATES/s1200b/3_Bryan-Adams-who-is-playing-Emirates-Riverside-at-Chester-le-Street.jpg",
+          "name": "Bryan Adams",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/bryanadamshits/icecast.audio"
+        },{
+          "id": 27,
+          "image": "https://i.pinimg.com/736x/83/dd/2e/83dd2e61a9364b771d4b7a5cd05bf56a.jpg",
+          "name": "Lady Gaga",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/ladygagahits/icecast.audio"
+        },{
+          "id": 28,
+          "image": "https://i5.walmartimages.com/asr/15bb92f7-c024-44f2-8db7-e5b055bf7817_1.915b0e872683a2e168d302d7c1728186.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff",
+          "name": "Phil Collins",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/philcollinshits/icecast.audio"
+        },{
+          "id": 29,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmbgqSdUuITZn_NXyfCxONcs48fIeqZt42B6ldErzK2oybZC51M7Kn6qirLYGW2etFkuw&usqp=CAU",
+          "name": "Savage Garden",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/savagegarden/icecast.audio"
+        },{
+          "id": 30,
+          "image": "https://www.billboard.com/wp-content/uploads/media/robbie-williams-billboard-650_0.jpg?w=650",
+          "name": "Robbie Williams",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/robbiewilliamshits/icecast.audio"
+        },{
+          "id": 31,
+          "image": "https://i.pinimg.com/736x/79/3d/e0/793de06e733f277d0aae8d1235738cc2.jpg",
+          "name": "Rihanna",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/rihannahits/icecast.audio"
+        },{
+          "id": 32,
+          "image": "https://hips.hearstapps.com/hmg-prod/images/taylor-swift-tour-american-idol-2023-luke-bryan-tiktok-644c0dd1a7f9f.jpg?crop=0.431xw:1.00xh;0.542xw,0&resize=1200:*",
+          "name": "Taylor Swift",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/taylorswifthits/icecast.audio"
+        },{
+          "id": 33,
+          "image": "https://hips.hearstapps.com/hmg-prod/images/gettyimages-108004399-1521212324.jpg",
+          "name": "Backstreet Boys",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/backstreetboys/icecast.audio"
+        },{
+          "id": 34,
+          "image": "https://i.pinimg.com/736x/b7/82/a8/b782a8b1386aa3944bc85c3cea4a1e92.jpg",
+          "name": "Sting",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/stinghits/icecast.audio"
+        },{
+          "id": 35,
+          "image": "https://seeklogo.com/images/B/bon-jovi-brasao-logo-B13D6C4533-seeklogo.com.png",
+          "name": "Bon Jovi",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/bonjovihits/icecast.audio"
+        },{
+          "id": 36,
+          "image": "https://i.pinimg.com/originals/eb/71/bf/eb71bfb314897f332d0f859eabce417a.jpg",
+          "name": "Michael Bolton",
+          "site": "",
+          "url": "https://streaming.exclusive.radio/er/bonjovihits/icecast.audio"
         }
       ]
     }
